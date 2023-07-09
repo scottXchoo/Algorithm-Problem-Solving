@@ -1,5 +1,4 @@
 cnt = int(input())
-array = list(map(int, input().split()))
-array.sort()
+numbers = list(map(int, input().split()))
 
-print(array[0], array[-1])
+print(min(numbers), max(numbers))
