@@ -9,7 +9,6 @@ for _ in range(n):
 			new_word = word[index+1:]
 			if new_word.count(word[index]) > 0:
 				error += 1
-
 	if error == 0:
 		group_word += 1
 print(group_word)
