@@ -7,7 +7,7 @@ for _ in range(n):
 	for ox in ox_list:
 		if ox == "O":
 			score += 1
-			sum_score += score
 		else:
 			score = 0
+		sum_score += score
 	print(sum_score)
