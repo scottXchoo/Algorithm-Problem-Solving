@@ -16,9 +16,9 @@ int main() {
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
             if(a[i][j] == 0) {
-                int cnt = 1;
+                int cnt = 0;
                 while(a[i][j + 1] == -1) {
-                    a[i][j + 1] = cnt++;
+                    a[i][j + 1] = ++cnt;
                     j++;
                 } 
             }
