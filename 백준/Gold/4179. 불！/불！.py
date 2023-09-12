@@ -27,9 +27,9 @@ def hbfs():
             if not (0 <= nr < R and 0 <= nc < C):
                 print(human[r][c])
                 return
-            if human[nr][nc] or maze[nr][nc] == "#":
+            if maze[nr][nc] == "#" or human[nr][nc]:
                 continue
-            if fire[nr][nc] and human[r][c] + 1 >= fire[nr][nc]:
+            if human[r][c] + 1 >= fire[nr][nc] and fire[nr][nc]:
                 continue
             human[nr][nc] = human[r][c] + 1
             hq.append((nr, nc))
