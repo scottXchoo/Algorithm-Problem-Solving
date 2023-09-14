@@ -1,38 +1,40 @@
-import sys
-import itertools
-import collections
+from sys import stdin
+from itertools import permutations
+from collections import deque
 
-N = int(input())
-## scvs가 3개가 아닌 1개나 2개 남았을 때, 처리하는 법
-scvs = list(map(int, input().split())) + [0] * (3 - N)
-## 3차원 배열의 visited
-visited = [[[0 for i in range(61)]for j in range(61)]for k in range(61)]
 
-## [(9, 3, 1), (9, 1, 3), (3, 9, 1), (3, 1, 9), (1, 9, 3), (1, 3, 9)]
-combs = list(itertools.permutations([9, 3, 1], 3))
-dq = collections.deque([[scvs, 0]])
+def bfs():
+    q = deque([[*scv, 0]])
 
-while dq:
-    tmp, cnt = dq.popleft()
-    check = 0
-    for i in range(3):
-        if tmp[i] < 0:
-            tmp[i] = 0
-        ## 하나라도 체력이 남아있으면, break X
-        if tmp[i] > 0:
-            check = 1
-    if check == 0:
-        break
-      
-    for comb in combs:
-        next_scv = [0] * 3
-        for i in range(3):
-            ## if tmp[i] - comp[i]가 0보다 크면, True(1)여서 'tmp[i] - comb[i]''
-            ## else: False(0)여서 '0'
-            next_scv[i] = [0, tmp[i] - comb[i]][tmp[i] - comb[i] > 0]
-        if not visited[next_scv[0]][next_scv[1]][next_scv[2]]:
-            # 3차원 배열의 visited가 0이 아니라면, 1로 바꿔주기
-            visited[next_scv[0]][next_scv[1]][next_scv[2]] = 1
-            dq.append([next_scv, cnt + 1])
+    while q:
+        cur_state = q.popleft()
 
-print(cnt)
+        # 정렬된 상태에서 체력이 큰 SCV의 체력이 없다면 종료.
+        if cur_state[THREE] == 0:
+            return cur_state[CNT]
+
+        # 공격 가능한 경우의 수만큼 큐에 추가.
+        for case in attack_case:
+            next_scv = [0] * 3
+
+            # visited에 방문 여부를 체크하기 위해 0보다 작은 경우 0으로 변환.
+            for i in range(3):
+                next_scv[i] = \
+                    cur_state[i] - case[i] if cur_state[i] - case[i] > 0 else 0
+
+            # 정렬된 상태로 큐에 추가.
+            next_scv.sort()
+
+            if not visited[next_scv[ONE]][next_scv[TWO]][next_scv[THREE]]:
+                visited[next_scv[ONE]][next_scv[TWO]][next_scv[THREE]] = True
+                q.append([*next_scv, cur_state[CNT] + 1])
+
+
+if __name__ == '__main__':
+    ONE, TWO, THREE, CNT = 0, 1, 2, 3
+    n = int(stdin.readline())
+    # n이 3보다 작을 경우, 0을 추가해주어 n이 1, 2인 경우 별도로 처리하지 않아도 됨.
+    scv = sorted(list(map(int, stdin.readline().split())) + (3 - n) * [0])
+    attack_case = list(permutations([9, 3, 1], 3))
+    visited = [[[False] * 61 for _ in range(61)] for _ in range(61)]
+    print(bfs())
