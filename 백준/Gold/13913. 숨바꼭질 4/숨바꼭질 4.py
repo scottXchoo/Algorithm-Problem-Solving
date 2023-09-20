@@ -29,7 +29,7 @@ def bfs(x):
       if 0 <= nx < 100001 and visited[nx] == 0:
         dq.append(nx)
         visited[nx] = visited[x] + 1
-	# 전의 값을 현재 위치에 할당할 수 있음
+	      # 전의 값을 현재 위치에 할당할 수 있음
         route[nx] = x
 
 print(bfs(n))
