@@ -42,6 +42,19 @@
   ```
 
 ## DFS | 깊이 우선 탐색
+- [BOJ 16637 | 괄호 추가하기](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/e1c04e7b5eb154ebff78467034e7deb7462d3932/%EB%B0%B1%EC%A4%80/Gold/16637.%E2%80%85%EA%B4%84%ED%98%B8%E2%80%85%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/%EA%B4%84%ED%98%B8%E2%80%85%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0.py)
+  ```python
+  # calc 함수에서 '+', '-', '*' 처리
+  def calc(num1, oper, num2):
+  # 모든 경우의 수를 다 구할 필요 X
+  ## 반복되는 케이스 3개 구한 뒤, 재귀함수 이용
+  ### 1) 계산 끝!
+  if idx == n - 1: res = max(res, value)
+  ### 2) 괄호 X
+  if idx + 2 < n: dfs(idx + 2, calc(value, s[idx + 1], int(s[idx + 2])))
+  ### 3) 괄호 O
+  if idx + 4 < n: dfs(idx + 4, calc(value, s[idx + 1], calc(int(s[idx + 2]), s[idx + 3], int(s[idx + 4]))))
+  ```
 
 ## Dynamic Programming | 동적 프로그래밍
 - [BOJ 12869 | 뮤탈리스크](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/12869.%E2%80%85%EB%AE%A4%ED%83%88%EB%A6%AC%EC%8A%A4%ED%81%AC/%EB%AE%A4%ED%83%88%EB%A6%AC%EC%8A%A4%ED%81%AC.py)
