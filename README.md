@@ -42,6 +42,18 @@
   ```
 
 ## DFS | 깊이 우선 탐색
+- [BOJ 1987 | 알파벳](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/6af170653001965e699ab8be1d77da249c42a3d3/%EB%B0%B1%EC%A4%80/Gold/1987.%E2%80%85%EC%95%8C%ED%8C%8C%EB%B2%B3/%EC%95%8C%ED%8C%8C%EB%B2%B3.py)
+  ```python
+  # 일반적인 dfs 로직
+  def dfs(x, y, cnt): ans = max(ans, cnt)
+	for i in range(4): nx, ny = x + dx[i], y + dy[i]
+		if 예외 조건들: ## (범위 초과) and (not 알파벳 중복)
+		 ## 백트래킹 : 끝까지 갔다가 다시 처음으로 돌아가는 방법
+			dfs(nx, ny, cnt + 1)
+			alphas.remove(maps[nx][ny])
+  # alphas(= visited) 'set' 자료구조 활용
+  alphas = set()
+  ```
 - [BOJ 16637 | 괄호 추가하기](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/e1c04e7b5eb154ebff78467034e7deb7462d3932/%EB%B0%B1%EC%A4%80/Gold/16637.%E2%80%85%EA%B4%84%ED%98%B8%E2%80%85%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/%EA%B4%84%ED%98%B8%E2%80%85%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0.py)
   ```python
   # calc 함수에서 '+', '-', '*' 처리
