@@ -29,10 +29,11 @@ def hbfs():
                 return
             if maze[nx][ny] == "#" or human[nx][ny]:
                 continue
+            ## human의 현재 위치보다 한 칸 앞선 시간에 불이 이미 갔거나 동시에 갈 때 && fire[nx][ny]가 0일 때는 X (= and fire[nx][ny]
             if human[x][y] + 1 >= fire[nx][ny] and fire[nx][ny]:
                 continue
-            human[nx][ny] = human[x][y] + 1
             hq.append((nx, ny))
+            human[nx][ny] = human[x][y] + 1
     print("IMPOSSIBLE")
     return
 
@@ -41,16 +42,18 @@ R, C = map(int, input().split())
 maze = []
 hq = deque()
 fq = deque()
+## 방문 처리 && 걸린 시간
 human = [[0] * C for _ in range(R)]
 fire = [[0] * C for _ in range(R)]
 for i in range(R):
     maze.append(list(input().strip()))
     for j in range(C):
-        if maze[i][j] == "J":
-            hq.append((i, j))
-            human[i][j] = 1
-        elif maze[i][j] == "F":
+        if maze[i][j] == "F":
             fq.append((i, j))
             fire[i][j] = 1
+        elif maze[i][j] == "J":
+            hq.append((i, j))
+            human[i][j] = 1
+
 fbfs()
 hbfs()
