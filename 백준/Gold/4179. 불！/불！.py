@@ -9,8 +9,7 @@ def fbfs():
     while fq:
         x, y = fq.popleft()
         for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
+            nx, ny = x + dx[i], y + dy[i]
             if not (0 <= nx < R and 0 <= ny < C):
                 continue
             if maze[nx][ny] == "#" or fire[nx][ny]:
@@ -22,8 +21,7 @@ def hbfs():
     while hq:
         x, y = hq.popleft()
         for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
+            nx, ny = x + dx[i], y + dy[i]
             if not (0 <= nx < R and 0 <= ny < C):
                 print(human[x][y])
                 return
