@@ -2,37 +2,37 @@ import sys
 input = sys.stdin.readline
 from collections import deque
 
-dr = (-1, 1, 0, 0)
-dc = (0, 0, -1, 1)
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 
 def fbfs():
     while fq:
-        r, c = fq.popleft()
-        for d in range(4):
-            nr = r + dr[d]
-            nc = c + dc[d]
-            if not (0 <= nr < R and 0 <= nc < C):
+        x, y = fq.popleft()
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if not (0 <= nx < R and 0 <= ny < C):
                 continue
-            if maze[nr][nc] == "#" or fire[nr][nc]:
+            if maze[nx][ny] == "#" or fire[nx][ny]:
                 continue
-            fire[nr][nc] = fire[r][c] + 1
-            fq.append((nr, nc))
+            fire[nx][ny] = fire[x][y] + 1
+            fq.append((nx, ny))
 
 def hbfs():
     while hq:
-        r, c = hq.popleft()
-        for d in range(4):
-            nr = r + dr[d]
-            nc = c + dc[d]
-            if not (0 <= nr < R and 0 <= nc < C):
-                print(human[r][c])
+        x, y = hq.popleft()
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if not (0 <= nx < R and 0 <= ny < C):
+                print(human[x][y])
                 return
-            if human[nr][nc] or maze[nr][nc] == "#":
+            if maze[nx][ny] == "#" or human[nx][ny]:
                 continue
-            if fire[nr][nc] and human[r][c] + 1 >= fire[nr][nc]:
+            if human[x][y] + 1 >= fire[nx][ny] and fire[nx][ny]:
                 continue
-            human[nr][nc] = human[r][c] + 1
-            hq.append((nr, nc))
+            human[nx][ny] = human[x][y] + 1
+            hq.append((nx, ny))
     print("IMPOSSIBLE")
     return
 
