@@ -42,6 +42,16 @@
   ```
 
 ## DFS | 깊이 우선 탐색
+- [BOJ 15684 | 사다리 조작](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/15684.%E2%80%85%EC%82%AC%EB%8B%A4%EB%A6%AC%E2%80%85%EC%A1%B0%EC%9E%91/%EC%82%AC%EB%8B%A4%EB%A6%AC%E2%80%85%EC%A1%B0%EC%9E%91.py)
+  ```python
+  for j in range(k, N - 1):
+	# 0인 경우 가로줄 만들고 연속된 가로선을 만들지 않기 위해 "j+2" 호츌
+	if graph[i][j] == 0:
+		graph[i][j] = 1
+		dfs(i, j + 2, cnt + 1)
+		# 백트래킹 : dfs로 쭉 탐색하다가 끝까지 가면, 해당 사다리 치우기
+		graph[i][j] = 0
+  ```
 - [BOJ 1987 | 알파벳](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/6af170653001965e699ab8be1d77da249c42a3d3/%EB%B0%B1%EC%A4%80/Gold/1987.%E2%80%85%EC%95%8C%ED%8C%8C%EB%B2%B3/%EC%95%8C%ED%8C%8C%EB%B2%B3.py)
   ```python
   # 일반적인 dfs 로직
