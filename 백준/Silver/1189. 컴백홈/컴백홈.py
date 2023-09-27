@@ -1,9 +1,9 @@
 R, C, K = map(int, input().split())
 graph = [list(input()) for _ in range(R)]
+graph[R - 1][0] = 'T'
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 ans = 0
-graph[R - 1][0] = 'T'
 
 def dfs(x, y, cnt):
   global ans
