@@ -40,6 +40,14 @@
   ```
 
 ## DFS | 깊이 우선 탐색
+- [BOJ 1189 | 컴백홈](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/1189.%E2%80%85%EC%BB%B4%EB%B0%B1%ED%99%88/%EC%BB%B4%EB%B0%B1%ED%99%88.py)
+  ```python
+  # 전형적인 DFS와 백트래킹을 곁들인 문제
+  ## 주어진 장애물을 활용해서 visited 처리를 할 수 있다.
+  graph[nx][ny] = 'T'
+  dfs(nx, ny, cnt + 1)
+  graph[nx][ny] = '.'
+  ```
 - [BOJ 14620 | 꽃길](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/14620.%E2%80%85%EA%BD%83%EA%B8%B8/%EA%BD%83%EA%B8%B8.py) | Silver 2
   ```python
   # 풀이가 3개나 있다 : DFS & 백트래킹, 조합(combination) 이용, 재귀함수
