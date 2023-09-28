@@ -40,7 +40,7 @@
   ```
 
 ## DFS | 깊이 우선 탐색
-- [BOJ 1189 | 컴백홈](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/1189.%E2%80%85%EC%BB%B4%EB%B0%B1%ED%99%88/%EC%BB%B4%EB%B0%B1%ED%99%88.py)
+- [BOJ 1189 | 컴백홈](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/1189.%E2%80%85%EC%BB%B4%EB%B0%B1%ED%99%88/%EC%BB%B4%EB%B0%B1%ED%99%88.py) | Silver 1
   ```python
   # 전형적인 DFS와 백트래킹을 곁들인 문제
   ## 주어진 장애물을 활용해서 visited 처리를 할 수 있다.
