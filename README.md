@@ -88,7 +88,16 @@
   ### 3) 괄호 O
   if idx + 4 < n: dfs(idx + 4, calc(value, s[idx + 1], calc(int(s[idx + 2]), s[idx + 3], int(s[idx + 4]))))
   ```
-
+## Stack &  Queue | 스택과 큐
+- [BOJ 1966 | 프린터 큐](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/1966.%E2%80%85%ED%94%84%EB%A6%B0%ED%84%B0%E2%80%85%ED%81%90/%ED%94%84%EB%A6%B0%ED%84%B0%E2%80%85%ED%81%90.py) | Silver 3
+  ```python
+  # deque와 index 전용 deque을 만든다.
+  dq = deque(list(map(int, input().split())))
+  idx_dq = deque(list(range(N)))
+  # 맨 처음꺼를 빼서 맨 뒤로 넣는 방법
+  dq.append(dq.popleft())
+  idx_dq.append(idx_dq.popleft())
+  ```
 ## Dynamic Programming | 동적 프로그래밍
 - [BOJ 12869 | 뮤탈리스크](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/12869.%E2%80%85%EB%AE%A4%ED%83%88%EB%A6%AC%EC%8A%A4%ED%81%AC/%EB%AE%A4%ED%83%88%EB%A6%AC%EC%8A%A4%ED%81%AC.py) | Gold 4
   ```python
