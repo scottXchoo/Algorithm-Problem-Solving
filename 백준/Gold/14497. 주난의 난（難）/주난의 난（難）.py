@@ -20,17 +20,16 @@ def bfs(x, y):
     x, y = dq.popleft()
     for i in range(4):
       nx, ny = x + dx[i], y + dy[i]
-      if not(0 <= nx < N and 0 <= ny < M):
+      if not(0 <= nx < N and 0 <= ny < M) or distance[nx][ny] != -1:
         continue
-      if distance[nx][ny] == -1:
-        if graph[nx][ny] == "1" or graph[nx][ny] == "#":
-          distance[nx][ny] = distance[x][y] + 1
-          dq.append((nx, ny))
-        elif graph[nx][ny] == "0":
-          # distance 값은 시작한 곳과 같이 그대로 간다.
-          distance[nx][ny] = distance[x][y]
-          # "1"과 "#"가 아니기에 바로바로 탐색을 위해 appendleft!!!
-          dq.appendleft((nx, ny))
+      if graph[nx][ny] != "0":
+        distance[nx][ny] = distance[x][y] + 1
+        dq.append((nx, ny))
+      elif graph[nx][ny] == "0":
+        # distance 값은 시작한 곳과 같이 그대로 간다.
+        distance[nx][ny] = distance[x][y]
+        # "1"과 "#"가 아니기에 바로바로 탐색을 위해 appendleft!!!
+        dq.appendleft((nx, ny))
 
 bfs(x1 - 1, y1 - 1)
 print(distance[x2 - 1][y2 - 1])
