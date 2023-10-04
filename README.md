@@ -93,7 +93,7 @@
   ```python
   # deque와 index 전용 deque을 만든다.
   dq = deque(list(map(int, input().split())))
-  idx_dq = deque(list(range(N)))
+  idx_dq = deque(list(range(N))) ## 0부터 N까지 저장
   # 맨 처음꺼를 빼서 맨 뒤로 넣는 방법
   dq.append(dq.popleft())
   idx_dq.append(idx_dq.popleft())
