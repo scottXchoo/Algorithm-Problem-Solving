@@ -3,6 +3,12 @@
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ckh0601)](https://solved.ac/ckh0601/)
 
 ## BFS | 너비 우선 탐색
+- [BOJ 14497 | 주난의 난](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14497.%E2%80%85%EC%A3%BC%EB%82%9C%EC%9D%98%E2%80%85%EB%82%9C%EF%BC%88%E9%9B%A3%EF%BC%89/%EC%A3%BC%EB%82%9C%EC%9D%98%E2%80%85%EB%82%9C%EF%BC%88%E9%9B%A3%EF%BC%89.py) | Gold 4
+  ```python
+  # split()하면, index error
+  graph.append(list(map(str, input().rstrip())))
+  ## appendleft((a, b))를 통해 (a, b)를 바로 탐색할 수 있게 된다.
+  ```
 - [BOJ 13913 | 숨바꼭질 4](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/13913.%E2%80%85%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88%E2%80%854/%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88%E2%80%854.py) | Gold 4
   ```python
   # 어떻게 이동했는지 추적하는 방법
