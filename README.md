@@ -3,6 +3,15 @@
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ckh0601)](https://solved.ac/ckh0601/)
 
 ## BFS | 너비 우선 탐색
+- [BOJ 3197 | 백조의 호수](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Platinum/3197.%E2%80%85%EB%B0%B1%EC%A1%B0%EC%9D%98%E2%80%85%ED%98%B8%EC%88%98/%EB%B0%B1%EC%A1%B0%EC%9D%98%E2%80%85%ED%98%B8%EC%88%98.py) | Platinum 5
+  ```python
+  # 물과 백조를 각각 BFS로 처리
+  ## 그리고 deque()을 동시에 처리하고 나중에 업데이트
+  if graph[nx][ny] == ".":
+    wq1.append((nx, ny))
+  else:
+    wq2.append((nx, ny))
+  ```
 - [BOJ 14497 | 주난의 난](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14497.%E2%80%85%EC%A3%BC%EB%82%9C%EC%9D%98%E2%80%85%EB%82%9C%EF%BC%88%E9%9B%A3%EF%BC%89/%EC%A3%BC%EB%82%9C%EC%9D%98%E2%80%85%EB%82%9C%EF%BC%88%E9%9B%A3%EF%BC%89.py) | Gold 4
   ```python
   # split()하면, index error
