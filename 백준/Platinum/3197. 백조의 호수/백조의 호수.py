@@ -5,8 +5,7 @@ ex, ey, ans = 0, 0, 0 # ex, ey는 두 번째 백조의 위치 & ans는 날짜
 dx, dy = (-1, 1, 0, 0), (0, 0, -1, 1)
 graph = [list(input().strip()) for _ in range(R)]
 wv, sv = [[0] * C for _ in range(R)], [[0] * C for _ in range(R)]
-wq1, wq2 = deque(), deque()
-sq1, sq2 = deque(), deque()
+wq1, wq2, sq1, sq2 = deque(), deque(), deque(), deque()
 
 def water():
   while wq1:
