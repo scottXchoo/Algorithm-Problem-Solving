@@ -5,8 +5,7 @@ N = int(input())
 fields = [list(map(int, input().split())) for _ in range(N)]
 visited = [[0] * N for _ in range(N)]
 
-dx = [0, -1, 1, 0, 0]
-dy = [0, 0, 0, -1, 1]
+dx, dy = (0, -1, 1, 0, 0), (0, 0, 0, -1, 1)
 ans = int(sys.maxsize)
 
 def check(x, y, visited):
@@ -36,7 +35,7 @@ def dfs(cnt, visited, cost_sum):
           nx, ny = x + dx[i], y + dy[i]
           visited[nx][ny] = 1
         
-        dfs(cnt+1, visited, cost_sum + calc(x, y))
+        dfs(cnt + 1, visited, cost_sum + calc(x, y))
         
         for i in range(5):
           nx, ny = x + dx[i], y + dy[i]
