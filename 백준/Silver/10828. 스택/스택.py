@@ -4,7 +4,7 @@ N = int(input())
 stack = []
 
 for _ in range(N):
-  s = sys.stdin.readline().split()
+  s = input().split()
   if s[0] == 'push':
     stack.append(s[1])
     
