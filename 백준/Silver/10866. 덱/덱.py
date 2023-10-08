@@ -5,7 +5,7 @@ N = int(input())
 q = deque()
 
 for _ in range(N):
-  s = sys.stdin.readline().split()
+  s = input().split()
   if s[0] == 'push_front':
     q.appendleft(s[1])
 
