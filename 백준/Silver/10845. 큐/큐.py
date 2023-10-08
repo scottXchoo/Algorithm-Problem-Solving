@@ -5,7 +5,7 @@ N = int(input())
 q = deque()
 
 for _ in range(N):
-  s = sys.stdin.readline().split()
+  s = input().split()
   if s[0] == 'push':
     q.append(s[1])
     
