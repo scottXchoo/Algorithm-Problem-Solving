@@ -8,8 +8,7 @@ for _ in range(N):
   graph.append(list(map(str, input().rstrip())))
 
 distance = [[-1] * M for _ in range(N)]
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
+dx, dy = (-1, 1, 0, 0), (0, 0, -1, 1)
 
 def bfs(x, y):
   dq = deque()
