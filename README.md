@@ -3,6 +3,15 @@
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ckh0601)](https://solved.ac/ckh0601/)
 
 ## BFS | 너비 우선 탐색
+- [BOJ 17471 | 게리맨더링](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/17471.%E2%80%85%EA%B2%8C%EB%A6%AC%EB%A7%A8%EB%8D%94%EB%A7%81/%EA%B2%8C%EB%A6%AC%EB%A7%A8%EB%8D%94%EB%A7%81.py) | Gold 4
+  ```python
+  # 조합 : 절반만 만들고 끊기지 않게끔 조건 추가
+  combs = list(combinations(range(1, N + 1), i))
+  for comb in combs:
+  	sum1, node1 = bfs(comb)
+  	sum2, node2 = bfs([i for i in range(1, N + 1) if i not in comb])
+  if node1 + node2 == N: ans = min(ans, ans(sum1 - sum2))
+  ```
 - [BOJ 3197 | 백조의 호수](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Platinum/3197.%E2%80%85%EB%B0%B1%EC%A1%B0%EC%9D%98%E2%80%85%ED%98%B8%EC%88%98/%EB%B0%B1%EC%A1%B0%EC%9D%98%E2%80%85%ED%98%B8%EC%88%98.py) | Platinum 5
   ```python
   # 물과 백조를 각각 BFS로 처리
