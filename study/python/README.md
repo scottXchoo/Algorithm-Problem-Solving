@@ -18,3 +18,8 @@
   # 2. 두 번째 인자를 기준으로 내림차순 정렬
   arr.sort(key = lambda x : (x[0], -x[1]))
   ```
+- `sum()` : 배열의 요소 합
+- `Counter(arr).most_common()` : [(-2, 2), (-1, 2), (-3, 1)]
+  - (왼쪽 : 값, 오른쪽 : 요소 개수) && 오름차순 정렬함
+  - `from collections import Counter`
+- `max()` & `min()` : 요소 중 최댓값 & 최솟값
