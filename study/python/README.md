@@ -23,3 +23,4 @@
   - (왼쪽 : 값, 오른쪽 : 요소 개수) && 오름차순 정렬함
   - `from collections import Counter`
 - `max()` & `min()` : 요소 중 최댓값 & 최솟값
+- `len(str(M))` : M이 정수일 때, 자릿수를 구하는 방법
