@@ -136,3 +136,16 @@
 
 ## Bit-Mask | 비트마스크
 - [BOJ 1285 | 동전 뒤집기](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1285.%E2%80%85%EB%8F%99%EC%A0%84%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0/%EB%8F%99%EC%A0%84%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0.py)
+
+## Implementaion | 구현
+- [BOJ 14890 | 경사로](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14890.%E2%80%85%EA%B2%BD%EC%82%AC%EB%A1%9C/%EA%B2%BD%EC%82%AC%EB%A1%9C.py) | Gold 3
+  ```python
+  # 풀이 여러 번 복습 필요
+  # 세로 탐색
+  for i in range(N):
+    temp = []
+    for j in range(N):
+      temp.append(maps[j][i])
+    if check(temp, L):
+      ans += 1
+  ```
