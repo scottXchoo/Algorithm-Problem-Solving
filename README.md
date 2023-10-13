@@ -136,6 +136,14 @@
 
 ## Bit-Mask | 비트마스크
 - [BOJ 1285 | 동전 뒤집기](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1285.%E2%80%85%EB%8F%99%EC%A0%84%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0/%EB%8F%99%EC%A0%84%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0.py)
+- [BOJ 1062 | 가르침](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1062.%E2%80%85%EA%B0%80%EB%A5%B4%EC%B9%A8/%EA%B0%80%EB%A5%B4%EC%B9%A8.py)
+  ```python
+  # 비트마스크 아직 익숙하지가 않다... 무한복습 필요
+  words = [input().rstrip() for _ in range(N)]
+  def word2bit(word): return bit
+  bits = list(map(word2bit, words)
+  alphabet = [1 << i for i in range(26) if not (base_bit & 1 << i)]
+  ```
 
 ## Implementaion | 구현
 - [BOJ 14890 | 경사로](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14890.%E2%80%85%EA%B2%BD%EC%82%AC%EB%A1%9C/%EA%B2%BD%EC%82%AC%EB%A1%9C.py) | Gold 3
