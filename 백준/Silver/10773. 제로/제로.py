@@ -1,17 +1,11 @@
-from collections import deque
-
 K = int(input())
-arr = [int(input()) for _ in range(K)]
+arr = [0]
 
-dq = deque()
-for i in arr:
-  if i != 0:
-    dq.append(i)
-  else:
-    dq.pop()
-
-ans = 0
-for i in dq:
-  ans += i
-
-print(ans)
+for i in range(K):
+    N = int(input())
+    if N == 0:
+        arr.pop()
+    else:
+        arr.append(N)
+        
+print(sum(arr))
