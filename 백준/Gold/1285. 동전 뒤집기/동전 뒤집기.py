@@ -1,8 +1,11 @@
 N = int(input())
+# coin = [['H', 'H', 'T'], ['T', 'H', 'H'], ['T', 'H', 'T']]
 coin = [list(input()) for _ in range(N)]
 ans = N * N + 1
 
+# bit : 0, 1, ... , 2^N - 1
 for bit in range(1 << N):
+  # tmp = [['H', 'H', 'T'], ['T', 'H', 'H'], ['T', 'H', 'T']]
   tmp = [coin[i][:] for i in range(N)]
   for i in range(N):
     if bit & (1 << i):
