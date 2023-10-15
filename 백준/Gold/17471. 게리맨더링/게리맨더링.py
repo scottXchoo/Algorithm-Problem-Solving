@@ -14,17 +14,17 @@ for i in range(1, N + 1):
   ## [0, [2, 4], [1, 3, 6, 5], [4, 2], [1, 3], [2], [2]]
   link[i] = link[i][1:]
 
-def bfs(comb):
+def bfs(comb): # comb = (1, 2, 4)
   global people, link
-  start = comb[0]
-  dq = deque([start])
-  visited = set([start])
+  start = comb[0] # start = 1
+  dq = deque([start]) # dq = deque([1])
+  visited = set([start]) # visited = {1}
   num = 0
 
   while dq:
-    value = dq.popleft()
+    value = dq.popleft() # value = 1
     num += people[value]
-    for i in link[value]:
+    for i in link[value]: # i = 2, 4
       if i not in visited and i in comb:
         dq.append(i)
         visited.add(i)
