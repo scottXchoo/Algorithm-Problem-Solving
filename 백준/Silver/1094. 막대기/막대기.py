@@ -1,15 +1,12 @@
-import sys
-input = sys.stdin.readline
-
 X = int(input())
-bars = [64]
+cnt = 0
+N = 64
 
-while sum(bars) != X:
-  bars.sort()
-  temp = bars[0] / 2
-  bars.pop(0)
-  bars.append(int(temp))
-  if sum(bars) < X:
-    bars.append(int(temp))
+while X > 0:
+	if N > X:
+		N = N // 2
+	else:
+		cnt += 1
+		X -= N
 
-print(len(bars))
+print(cnt)
