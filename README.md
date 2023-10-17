@@ -135,8 +135,18 @@
   ```
 
 ## Bit-Mask | 비트마스크
-- [BOJ 1285 | 동전 뒤집기](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1285.%E2%80%85%EB%8F%99%EC%A0%84%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0/%EB%8F%99%EC%A0%84%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0.py)
-- [BOJ 1062 | 가르침](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1062.%E2%80%85%EA%B0%80%EB%A5%B4%EC%B9%A8/%EA%B0%80%EB%A5%B4%EC%B9%A8.py)
+- [BOJ 2234 | 성곽](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/2234.%E2%80%85%EC%84%B1%EA%B3%BD/%EC%84%B1%EA%B3%BD.py) | Gold 3
+  ```python
+  # "비트마스크와 BFS 조합 + 백트래킹"으로 푸는 문제 : 이 문제 진짜 신박하고 재밌다...
+  ## W, H의 위치가 조금 헷갈렸다. y, x로 접근해야 됨
+  if maps[x][y] & (1 << i) == 0 # 벽이 없다면 ...
+  if maps[i][j] & (1 << k) == (1 << k): # 벽이 있다면 ...
+    maps[i][j] -= (1 << k) # 해당 위치에 벽을 제거
+    room_del = max(room_del, bfs(i, j)) # 제거한 상태로 bfs 탐색 시작 & 최대 방 크기 업데이트
+    maps[i][j] += (1 << k) # 다시 해당 위치에 벽 생성 (백트래킹)
+  ```
+- [BOJ 1285 | 동전 뒤집기](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1285.%E2%80%85%EB%8F%99%EC%A0%84%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0/%EB%8F%99%EC%A0%84%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0.py) | Gold 1
+- [BOJ 1062 | 가르침](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1062.%E2%80%85%EA%B0%80%EB%A5%B4%EC%B9%A8/%EA%B0%80%EB%A5%B4%EC%B9%A8.py) | Gold 4
   ```python
   # 비트마스크 아직 익숙하지가 않다... 무한복습 필요
   words = [input().rstrip() for _ in range(N)]
