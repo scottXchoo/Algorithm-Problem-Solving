@@ -6,11 +6,6 @@ room_cnt, room_size = 0, 0
 visited = [[False] * N for _ in range(M)]
 dx, dy = [0, -1, 0, 1], [-1, 0, 1, 0]
 
-def isRange(x, y):
-  if 0 <= x < M and 0 <= y < N:
-    return True
-  return False
-
 def bfs(x, y):
   dq = deque()
   dq.append((x, y))
@@ -22,11 +17,11 @@ def bfs(x, y):
     for i in range(4):
       if maps[x][y] & (1 << i) == 0:
         nx, ny = x + dx[i], y + dy[i]
-        
-        if isRange(nx, ny) is False:
+
+        if not(0 <= nx < M and 0 <= ny < N):
           break
           
-        if visited[nx][ny] is False:
+        if visited[nx][ny] == False:
           dq.append((nx, ny))
           visited[nx][ny] = True
           room += 1
