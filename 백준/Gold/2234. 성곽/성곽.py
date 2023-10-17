@@ -2,10 +2,9 @@ from collections import deque
 
 W, H = map(int, input().split())
 maps = [list(map(int, input().split())) for _ in range(H)]
-room_cnt, room_size = 0, 0
+room_cnt, room_size, room_del = 0, 0, 0
 visited = [[False] * W for _ in range(H)]
 dx, dy = [0, -1, 0, 1], [-1, 0, 1, 0]
-
 
 def bfs(x, y):
   dq = deque()
@@ -19,15 +18,13 @@ def bfs(x, y):
       if maps[x][y] & (1 << i) == 0:
         nx, ny = x + dx[i], y + dy[i]
 
-        if not (0 <= nx < H and 0 <= ny < W):
+        if not (0 <= nx < H and 0 <= ny < W) or visited[nx][ny]:
           continue
 
-        if not visited[nx][ny]:
-          dq.append((nx, ny))
-          visited[nx][ny] = True
-          room += 1
+        dq.append((nx, ny))
+        visited[nx][ny] = True
+        room += 1
   return room
-
 
 for i in range(H):
   for j in range(W):
@@ -38,7 +35,6 @@ for i in range(H):
 print(room_cnt)
 print(room_size)
 
-room_del = 0
 for i in range(H):
   for j in range(W):
     for k in range(4):
