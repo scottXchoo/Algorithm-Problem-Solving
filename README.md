@@ -135,6 +135,10 @@
   ```
 
 ## Bit-Mask | 비트마스크
+- [BOJ 14391 | 종이 조각](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14391.%E2%80%85%EC%A2%85%EC%9D%B4%E2%80%85%EC%A1%B0%EA%B0%81/%EC%A2%85%EC%9D%B4%E2%80%85%EC%A1%B0%EA%B0%81.py)
+  
+  <img width="500" alt="image" src="https://github.com/scottXchoo/Algorithm_Problem_Solving/assets/107841492/8126233d-c48a-457b-b658-f6becc72c0e2">
+
 - [BOJ 2234 | 성곽](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/2234.%E2%80%85%EC%84%B1%EA%B3%BD/%EC%84%B1%EA%B3%BD.py) | Gold 3
   ```python
   # "비트마스크와 BFS 조합 + 백트래킹"으로 푸는 문제 : 이 문제 진짜 신박하고 재밌다...
