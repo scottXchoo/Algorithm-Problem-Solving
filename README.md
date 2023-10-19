@@ -135,9 +135,13 @@
   ```
 
 ## Bit-Mask | 비트마스크
-- [BOJ 14391 | 종이 조각](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14391.%E2%80%85%EC%A2%85%EC%9D%B4%E2%80%85%EC%A1%B0%EA%B0%81/%EC%A2%85%EC%9D%B4%E2%80%85%EC%A1%B0%EA%B0%81.py)
+- [BOJ 14391 | 종이 조각](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14391.%E2%80%85%EC%A2%85%EC%9D%B4%E2%80%85%EC%A1%B0%EA%B0%81/%EC%A2%85%EC%9D%B4%E2%80%85%EC%A1%B0%EA%B0%81.py) | Gold 3
   
   <img width="500" alt="image" src="https://github.com/scottXchoo/Algorithm_Problem_Solving/assets/107841492/8126233d-c48a-457b-b658-f6becc72c0e2">
+
+  ```python
+  # 비트마스크로 푸는 법 생소해서 그런지 바로 이해하기가 어렵다. 주기적으로 풀이법을 반복하자!
+  ```
 
 - [BOJ 2234 | 성곽](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/2234.%E2%80%85%EC%84%B1%EA%B3%BD/%EC%84%B1%EA%B3%BD.py) | Gold 3
   ```python
