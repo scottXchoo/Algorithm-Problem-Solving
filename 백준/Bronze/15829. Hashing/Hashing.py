@@ -9,4 +9,4 @@ for i in range(L):
 for idx, num in enumerate(arr):
   add += num * (r ** idx)
 
-print(add)
+print(add % 1234567891)
