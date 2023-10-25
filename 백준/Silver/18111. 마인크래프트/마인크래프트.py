@@ -5,8 +5,14 @@ N, M, B = map(int, input().split())
 maps = [list(map(int, input().split())) for _ in range(N)]
 ans = sys.maxsize
 idx = 0
+max_h = 0
 
-for target in range(257):
+for i in range(N):
+  for j in range(M):
+    if maps[i][j] > max_h:
+      max_h = maps[i][j]
+
+for target in range(max_h + 1):
   max_target, min_target = 0, 0
 
   for i in range(N):
