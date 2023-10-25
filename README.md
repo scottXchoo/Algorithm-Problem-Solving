@@ -164,6 +164,17 @@
   ```
 
 ## Implementaion | 구현
+- [BOJ 18111 | 마인크래프트](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/18111.%E2%80%85%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8/%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8.py)
+
+  <img width="500" alt="image" src="https://github.com/scottXchoo/Algorithm_Problem_Solving/assets/107841492/5aa89d00-a6ed-4cb3-b1a7-a201e28fa72d">
+  
+  ```python
+  ## AS-IS : 기준이 되는 높이를 0부터 256까지 target으로 잡기 (대부분 풀이)
+  for target in range(257):
+  ## TO-BE : 꼭 0부터 256까지 다 탐색해야할까? 0부터 [maps에 있는 가장 큰 값 + 1]까지만 탐색해도 충분하지 않을까? (나의 풀이) 성공 ✅
+  for target in range(max_h):
+  ```
+	
 - [BOJ 14890 | 경사로](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14890.%E2%80%85%EA%B2%BD%EC%82%AC%EB%A1%9C/%EA%B2%BD%EC%82%AC%EB%A1%9C.py) | Gold 3
   ```python
   # 풀이 여러 번 복습 필요
