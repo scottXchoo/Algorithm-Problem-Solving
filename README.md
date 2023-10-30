@@ -164,7 +164,12 @@
   ```
 
 ## Implementaion | 구현
-- [BOJ 18111 | 마인크래프트](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/18111.%E2%80%85%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8/%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8.py)
+- [BOJ 5430 | AC](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/5430.%E2%80%85AC/AC.py) | Gold 5
+  ```python
+  # reverse() : 카운트해서 짝수일 때와 홀수 일 때를 나눠서 중복 연산을 피하면 시간초과 X
+  arr = input()[1:-1].split(',') # [1, 2, 3, 4] ⇒ 1 2 3 4
+  ```
+- [BOJ 18111 | 마인크래프트](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/18111.%E2%80%85%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8/%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8.py) | Silver 2
 
   <img width="500" alt="image" src="https://github.com/scottXchoo/Algorithm_Problem_Solving/assets/107841492/5aa89d00-a6ed-4cb3-b1a7-a201e28fa72d">
   
