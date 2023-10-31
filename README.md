@@ -113,6 +113,11 @@
   if idx + 4 < n: dfs(idx + 4, calc(value, s[idx + 1], calc(int(s[idx + 2]), s[idx + 3], int(s[idx + 4]))))
   ```
 ## Stack &  Queue | 스택과 큐
+- [BOJ 15926 | 현욱이는 괄호왕이야](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/15926.%E2%80%85%ED%98%84%EC%9A%B1%EC%9D%80%E2%80%85%EA%B4%84%ED%98%B8%EC%99%95%EC%9D%B4%EC%95%BC%EF%BC%81%EF%BC%81/%ED%98%84%EC%9A%B1%EC%9D%80%E2%80%85%EA%B4%84%ED%98%B8%EC%99%95%EC%9D%B4%EC%95%BC%EF%BC%81%EF%BC%81.py) | Gold 3
+  ```python
+  S = input().strip() # 간단히 이렇게 적으면, "(())("를 입력값으로 넣을 수 있다.
+  counter[idx] = counter[stack[-1]] = 1 # idx와 스택의 맨 마지막 값에 해당하는 counter를 1로 동시에 바꿔준다.
+  ```
 - [BOJ 1966 | 프린터 큐](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/1966.%E2%80%85%ED%94%84%EB%A6%B0%ED%84%B0%E2%80%85%ED%81%90/%ED%94%84%EB%A6%B0%ED%84%B0%E2%80%85%ED%81%90.py) | Silver 3
   ```python
   # deque와 index 전용 deque을 만든다.
