@@ -113,6 +113,10 @@
   if idx + 4 < n: dfs(idx + 4, calc(value, s[idx + 1], calc(int(s[idx + 2]), s[idx + 3], int(s[idx + 4]))))
   ```
 ## Stack &  Queue | 스택과 큐
+- [BOJ 3015 | 오아시스 재결합](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Platinum/3015.%E2%80%85%EC%98%A4%EC%95%84%EC%8B%9C%EC%8A%A4%E2%80%85%EC%9E%AC%EA%B2%B0%ED%95%A9/%EC%98%A4%EC%95%84%EC%8B%9C%EC%8A%A4%E2%80%85%EC%9E%AC%EA%B2%B0%ED%95%A9.py) | Platinum 5
+  ```python
+  if stack[-1][H] == h: # 스택의 끝 값과 현재 사람이 같을 때, 이 부분 신경써서 복습하기
+  ```
 - [BOJ 15926 | 현욱이는 괄호왕이야](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/15926.%E2%80%85%ED%98%84%EC%9A%B1%EC%9D%80%E2%80%85%EA%B4%84%ED%98%B8%EC%99%95%EC%9D%B4%EC%95%BC%EF%BC%81%EF%BC%81/%ED%98%84%EC%9A%B1%EC%9D%80%E2%80%85%EA%B4%84%ED%98%B8%EC%99%95%EC%9D%B4%EC%95%BC%EF%BC%81%EF%BC%81.py) | Gold 3
   ```python
   S = input().strip() # 간단히 이렇게 적으면, "(())("를 입력값으로 넣을 수 있다.
