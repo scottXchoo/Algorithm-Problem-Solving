@@ -2,6 +2,15 @@
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ckh0601)](https://solved.ac/ckh0601/)
 
+### Greedy | 그리디 알고리즘
+- [BOJ 2109 | 순회강연](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/2109.%E2%80%85%EC%88%9C%ED%9A%8C%EA%B0%95%EC%97%B0/%EC%88%9C%ED%9A%8C%EA%B0%95%EC%97%B0.py) | Gold 3
+  ```python
+  # 전형적인 그리디 문제
+  ## 힙에 p를 넣고 힙의 크기 (= 강연할 횟수)보다 d가 작다면, 가장 작은 p를 pop하기
+  heapq.heappush(q, p)
+  if len(q) > d: heapq.heappop(q)
+  ```
+
 ## BFS | 너비 우선 탐색
 - [BOJ 17471 | 게리맨더링](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/17471.%E2%80%85%EA%B2%8C%EB%A6%AC%EB%A7%A8%EB%8D%94%EB%A7%81/%EA%B2%8C%EB%A6%AC%EB%A7%A8%EB%8D%94%EB%A7%81.py) | Gold 4
   ```python
