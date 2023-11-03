@@ -30,3 +30,19 @@
 - `deque.popleft()` = `list.pop(0)`
 - `rstrip()` : 오른쪽 공백 제거 (보통 string을 입력값으로 적을 때, 자주 씀)
 - `input()[1:-1].split(',')` : [1, 2, 3, 4] => 1 2 3 4
+
+```python
+string = "abcd"
+
+d = string[1:2] # b
+s = string[:2] # ab
+t = string[2:] # cd
+a = string[-1] # d
+b = string[-2] # c
+c = string[-2:] # cd
+k = string[-2:4] # cd
+
+lst = ['a', 'b', 'c', 'd']
+s = ''.join(lst) # abcd
+s = ', '.join(lst) # a, b, c, d
+```
