@@ -2,7 +2,7 @@
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ckh0601)](https://solved.ac/ckh0601/)
 
-### Greedy | 그리디 알고리즘
+## Greedy | 그리디 알고리즘
 - [BOJ 2109 | 순회강연](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/2109.%E2%80%85%EC%88%9C%ED%9A%8C%EA%B0%95%EC%97%B0/%EC%88%9C%ED%9A%8C%EA%B0%95%EC%97%B0.py) | Gold 3
   ```python
   # 전형적인 그리디 문제
