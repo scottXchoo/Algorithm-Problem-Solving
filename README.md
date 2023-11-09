@@ -121,6 +121,19 @@
   ### 3) 괄호 O
   if idx + 4 < n: dfs(idx + 4, calc(value, s[idx + 1], calc(int(s[idx + 2]), s[idx + 3], int(s[idx + 4]))))
   ```
+
+## Two Pointer | 투 포인터
+- [BOJ 13144 | List of Unique Numbers](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/13144.%E2%80%85List%E2%80%85of%E2%80%85Unique%E2%80%85Numbers/List%E2%80%85of%E2%80%85Unique%E2%80%85Numbers.py) | Gold 4
+  ```python
+  # 문제 : 수열에서 연속한 1개 이상의 수를 뽑았을 때, 같은 수가 여러 번 등장하지 않는 경우의 수를 구하라.
+  ## 문제를 잘못 해석 : `121`이 된다고 생각했고 `12`, `12` 이렇게 같은 수열이 등장하면 안 된다고 생각했다.
+  ```
+- [BOJ 1644 | 소수의 연속합](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1644.%E2%80%85%EC%86%8C%EC%88%98%EC%9D%98%E2%80%85%EC%97%B0%EC%86%8D%ED%95%A9/%EC%86%8C%EC%88%98%EC%9D%98%E2%80%85%EC%97%B0%EC%86%8D%ED%95%A9.py) | Gold 3
+  ```python
+  # 에라토스테네스의 체 : 문제에 소수가 등장하면, 항상 떠올리기!
+  temp_sum = sum(arr[start:end])
+  if temp_sum == N: # 이렇게 판단할 수 있다.
+  ```
 ## Stack &  Queue | 스택과 큐
 - [BOJ 3015 | 오아시스 재결합](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Platinum/3015.%E2%80%85%EC%98%A4%EC%95%84%EC%8B%9C%EC%8A%A4%E2%80%85%EC%9E%AC%EA%B2%B0%ED%95%A9/%EC%98%A4%EC%95%84%EC%8B%9C%EC%8A%A4%E2%80%85%EC%9E%AC%EA%B2%B0%ED%95%A9.py) | Platinum 5
   ```python
