@@ -3,6 +3,13 @@
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ckh0601)](https://solved.ac/ckh0601/)
 
 ## Greedy | 그리디 알고리즘
+- [BOJ 1700 | 멀티탭 스케줄링](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1700.%E2%80%85%EB%A9%80%ED%8B%B0%ED%83%AD%E2%80%85%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81/%EB%A9%80%ED%8B%B0%ED%83%AD%E2%80%85%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.py) | Gold 1
+  ```python
+  # 운영체제에서 페이징 교체 알고리즘 중 Belady's min algorithm (또는 Belady's optimal algorithm)가 있는데, 이 알고리즘을 떠올렸다면 어렵지 않게 풀었을 것 같습니다.
+  elif use[i:].index(plug) > far_one:
+  	far_one = use[i:].index(plug)
+  	temp = plug
+  ```
 - [BOJ 2109 | 순회강연](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/2109.%E2%80%85%EC%88%9C%ED%9A%8C%EA%B0%95%EC%97%B0/%EC%88%9C%ED%9A%8C%EA%B0%95%EC%97%B0.py) | Gold 3
   ```python
   # 전형적인 그리디 문제
