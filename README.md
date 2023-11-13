@@ -202,6 +202,14 @@
   ```
 
 ## Implementaion | 구현
+- [BOJ 17144 | 미세먼지 안녕!](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/17144.%E2%80%85%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%E2%80%85%EC%95%88%EB%85%95%EF%BC%81/%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%E2%80%85%EC%95%88%EB%85%95%EF%BC%81.py) | Gold 4
+  ```python
+  # 1) 미세먼지의 확산, 2) 위에서 반시계방향 순환, 3) 아래에서 시계방향 순환 : 3가지 함수 활용
+  up_step = [[0, 1], [-1, 0], [0, -1], [1, 0]]  # 동, 북, 서, 남
+  down_step = [[0, 1], [1, 0], [0, -1], [-1, 0]]  # 동, 남, 서, 북
+  for _ in range(T):
+    dust_diffusion() dust_clean_up() dust_clean_down()
+  ```
 - [BOJ 5430 | AC](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/5430.%E2%80%85AC/AC.py) | Gold 5
   ```python
   # reverse() : 카운트해서 짝수일 때와 홀수 일 때를 나눠서 중복 연산을 피하면 시간초과 X
