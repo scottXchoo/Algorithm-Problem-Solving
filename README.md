@@ -80,6 +80,18 @@
   ```
 
 ## DFS | 깊이 우선 탐색
+- [BOJ 14889 | 스타트와 링크](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/14889.%E2%80%85%EC%8A%A4%ED%83%80%ED%8A%B8%EC%99%80%E2%80%85%EB%A7%81%ED%81%AC/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%99%80%E2%80%85%EB%A7%81%ED%81%AC.py) | Silver 1
+  ```python
+  # 백트래킹 혹은 조합으로 풀 수 있는 문제
+  ## 조합 풀이
+  members = list(range(N)) # 1부터 N까지의 배열을 이런 식으로 만들 수 있다.
+  team2 = list(set(members) - set(team1)) # combinations로 team1을 구한 뒤, team2를 이렇게 구할 수 있다.
+  ## 백트래킹 풀이
+  if not visited[i]:
+    visited[i] = True
+    backTracking(depth + 1, i + 1)
+    visited[i] = False
+  ```
 - [BOJ 1189 | 컴백홈](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/1189.%E2%80%85%EC%BB%B4%EB%B0%B1%ED%99%88/%EC%BB%B4%EB%B0%B1%ED%99%88.py) | Silver 1
   ```python
   # 전형적인 DFS와 백트래킹을 곁들인 문제
