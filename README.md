@@ -80,6 +80,10 @@
   ```
 
 ## DFS | 깊이 우선 탐색
+- [BOJ 12100 | 2048 (Easy)](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/12100.%E2%80%852048%E2%80%85%EF%BC%88Easy%EF%BC%89/2048%E2%80%85%EF%BC%88Easy%EF%BC%89.py) | Gold 2
+  ```python
+  # `deepcopy` 부분 1시간 넘게 고민
+  ```
 - [BOJ 14889 | 스타트와 링크](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/14889.%E2%80%85%EC%8A%A4%ED%83%80%ED%8A%B8%EC%99%80%E2%80%85%EB%A7%81%ED%81%AC/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%99%80%E2%80%85%EB%A7%81%ED%81%AC.py) | Silver 1
   ```python
   # 백트래킹 혹은 조합으로 풀 수 있는 문제
