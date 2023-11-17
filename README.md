@@ -145,6 +145,48 @@
   if idx + 4 < n: dfs(idx + 4, calc(value, s[idx + 1], calc(int(s[idx + 2]), s[idx + 3], int(s[idx + 4]))))
   ```
 
+## Implementaion | 구현
+- [BOJ 3190 | 뱀](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/3190.%E2%80%85%EB%B1%80/%EB%B1%80.py) | Gold 4
+  ```python
+  # 삼성 SW 역량테스트 기출문제
+  ## 진짜 많이 배운 문제... Good!
+  ```
+- [BOJ 17144 | 미세먼지 안녕!](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/17144.%E2%80%85%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%E2%80%85%EC%95%88%EB%85%95%EF%BC%81/%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%E2%80%85%EC%95%88%EB%85%95%EF%BC%81.py) | Gold 4
+  ```python
+  # 1) 미세먼지의 확산, 2) 위에서 반시계방향 순환, 3) 아래에서 시계방향 순환 : 3가지 함수 활용
+  up_step = [[0, 1], [-1, 0], [0, -1], [1, 0]]  # 동, 북, 서, 남
+  down_step = [[0, 1], [1, 0], [0, -1], [-1, 0]]  # 동, 남, 서, 북
+  for _ in range(T):
+    dust_diffusion() dust_clean_up() dust_clean_down()
+  ```
+- [BOJ 5430 | AC](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/5430.%E2%80%85AC/AC.py) | Gold 5
+  ```python
+  # reverse() : 카운트해서 짝수일 때와 홀수 일 때를 나눠서 중복 연산을 피하면 시간초과 X
+  arr = input()[1:-1].split(',') # [1, 2, 3, 4] ⇒ 1 2 3 4
+  ```
+- [BOJ 18111 | 마인크래프트](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/18111.%E2%80%85%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8/%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8.py) | Silver 2
+
+  <img width="500" alt="image" src="https://github.com/scottXchoo/Algorithm_Problem_Solving/assets/107841492/5aa89d00-a6ed-4cb3-b1a7-a201e28fa72d">
+  
+  ```python
+  ## AS-IS : 기준이 되는 높이를 0부터 256까지 target으로 잡기 (대부분 풀이)
+  for target in range(257):
+  ## TO-BE : 꼭 0부터 256까지 다 탐색해야할까? 0부터 [maps에 있는 가장 큰 값 + 1]까지만 탐색해도 충분하지 않을까? (나의 풀이) 성공 ✅
+  for target in range(max_h):
+  ```
+	
+- [BOJ 14890 | 경사로](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14890.%E2%80%85%EA%B2%BD%EC%82%AC%EB%A1%9C/%EA%B2%BD%EC%82%AC%EB%A1%9C.py) | Gold 3
+  ```python
+  # 풀이 여러 번 복습 필요
+  # 세로 탐색
+  for i in range(N):
+    temp = []
+    for j in range(N):
+      temp.append(maps[j][i])
+    if check(temp, L):
+      ans += 1
+  ```
+
 ## Two Pointer | 투 포인터
 - [BOJ 13144 | List of Unique Numbers](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/13144.%E2%80%85List%E2%80%85of%E2%80%85Unique%E2%80%85Numbers/List%E2%80%85of%E2%80%85Unique%E2%80%85Numbers.py) | Gold 4
   ```python
@@ -215,41 +257,4 @@
   def word2bit(word): return bit
   bits = list(map(word2bit, words)
   alphabet = [1 << i for i in range(26) if not (base_bit & 1 << i)]
-  ```
-
-## Implementaion | 구현
-- [BOJ 17144 | 미세먼지 안녕!](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/17144.%E2%80%85%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%E2%80%85%EC%95%88%EB%85%95%EF%BC%81/%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%E2%80%85%EC%95%88%EB%85%95%EF%BC%81.py) | Gold 4
-  ```python
-  # 1) 미세먼지의 확산, 2) 위에서 반시계방향 순환, 3) 아래에서 시계방향 순환 : 3가지 함수 활용
-  up_step = [[0, 1], [-1, 0], [0, -1], [1, 0]]  # 동, 북, 서, 남
-  down_step = [[0, 1], [1, 0], [0, -1], [-1, 0]]  # 동, 남, 서, 북
-  for _ in range(T):
-    dust_diffusion() dust_clean_up() dust_clean_down()
-  ```
-- [BOJ 5430 | AC](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/5430.%E2%80%85AC/AC.py) | Gold 5
-  ```python
-  # reverse() : 카운트해서 짝수일 때와 홀수 일 때를 나눠서 중복 연산을 피하면 시간초과 X
-  arr = input()[1:-1].split(',') # [1, 2, 3, 4] ⇒ 1 2 3 4
-  ```
-- [BOJ 18111 | 마인크래프트](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/18111.%E2%80%85%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8/%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8.py) | Silver 2
-
-  <img width="500" alt="image" src="https://github.com/scottXchoo/Algorithm_Problem_Solving/assets/107841492/5aa89d00-a6ed-4cb3-b1a7-a201e28fa72d">
-  
-  ```python
-  ## AS-IS : 기준이 되는 높이를 0부터 256까지 target으로 잡기 (대부분 풀이)
-  for target in range(257):
-  ## TO-BE : 꼭 0부터 256까지 다 탐색해야할까? 0부터 [maps에 있는 가장 큰 값 + 1]까지만 탐색해도 충분하지 않을까? (나의 풀이) 성공 ✅
-  for target in range(max_h):
-  ```
-	
-- [BOJ 14890 | 경사로](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14890.%E2%80%85%EA%B2%BD%EC%82%AC%EB%A1%9C/%EA%B2%BD%EC%82%AC%EB%A1%9C.py) | Gold 3
-  ```python
-  # 풀이 여러 번 복습 필요
-  # 세로 탐색
-  for i in range(N):
-    temp = []
-    for j in range(N):
-      temp.append(maps[j][i])
-    if check(temp, L):
-      ans += 1
   ```
