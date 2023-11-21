@@ -146,6 +146,11 @@
   ```
 
 ## Implementaion | 구현
+- [BOJ 15662 | 톱니바퀴(2)](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/15662.%E2%80%85%ED%86%B1%EB%8B%88%EB%B0%94%ED%80%B4%E2%80%85%EF%BC%882%EF%BC%89/%ED%86%B1%EB%8B%88%EB%B0%94%ED%80%B4%E2%80%85%EF%BC%882%EF%BC%89.py) | Gold 5
+  ```python
+  # 톱니바퀴는 한 번에 동시에 돕니다. 문제를 제대로 이해하자!!!
+  # deque의 rotate() 함수
+  ```
 - [BOJ 3190 | 뱀](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/3190.%E2%80%85%EB%B1%80/%EB%B1%80.py) | Gold 4
   ```python
   # 삼성 SW 역량테스트 기출문제
