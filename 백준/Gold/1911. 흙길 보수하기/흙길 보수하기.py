@@ -8,8 +8,6 @@ waters.sort()
 cnt, cur = 0, 0
 
 for start, end in waters:
-  if start > end:
-    continue
   if cur > start:
     start = cur
   while start < end:
