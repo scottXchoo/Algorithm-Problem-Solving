@@ -3,6 +3,10 @@
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ckh0601)](https://solved.ac/ckh0601/)
 
 ## Greedy | 그리디 알고리즘
+- [BOJ 1911 | 흙길 보수하기](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1911.%E2%80%85%ED%9D%99%EA%B8%B8%E2%80%85%EB%B3%B4%EC%88%98%ED%95%98%EA%B8%B0/%ED%9D%99%EA%B8%B8%E2%80%85%EB%B3%B4%EC%88%98%ED%95%98%EA%B8%B0.py) | Gold 5
+  ```python
+  # 그림을 그리며 차근차근 생각하니까 이해가 되었습니다. (블로그 참고)
+  ```
 - [BOJ 1700 | 멀티탭 스케줄링](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1700.%E2%80%85%EB%A9%80%ED%8B%B0%ED%83%AD%E2%80%85%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81/%EB%A9%80%ED%8B%B0%ED%83%AD%E2%80%85%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.py) | Gold 1
   ```python
   # 운영체제에서 페이징 교체 알고리즘 중 Belady's min algorithm (또는 Belady's optimal algorithm)가 있는데, 이 알고리즘을 떠올렸다면 어렵지 않게 풀었을 것 같습니다.
