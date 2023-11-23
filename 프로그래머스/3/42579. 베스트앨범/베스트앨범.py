@@ -1,59 +1,31 @@
 def solution(genres, plays):
     answer = []
-    genre_list = []
-    test_map = {}
-    plays_map = {}
-    hash_map = {}
-    
+    play_map = {}
+    genre_map = {}
+    # [1] genres를 play의 합을 기준으로 오름차순 정렬
     for idx, genre in enumerate(genres):
-        if genre in hash_map:
-            hash_map[genre] += plays[idx]
+        if genre in genre_map:
+            genre_map[genre] += plays[idx]
         else:
-            hash_map[genre] = plays[idx]
-    sorted_map = sorted(hash_map.items(), key= lambda item:item[1], reverse=True)
-    
-    for g in sorted_map:
-        genre_list.append(g[0])
-    for genre in genre_list:
+            genre_map[genre] = plays[idx]
+    sorted_genre_map = sorted(genre_map.items(), key= lambda item:item[1], reverse=True)
+    # [2] 오름차순 정렬된 해시맵에서 genre를 기준으로 for문
+    for genre, _ in list(sorted_genre_map):
         temp = []
-        # genres에서 genre에 맞는 index를 구하고 이를 plays에 대입
-        for i, g in enumerate(genres):
-            if g == genre:
-                temp.append((plays[i], i))
-        print("temp(1)", temp)
+        # [3] 각 genre에 맞는 genres의 index를 구해 이를 plays의 값과 함께 temp에 대입
+        for idx, _genre in enumerate(genres):
+            if _genre == genre:
+                temp.append((plays[idx], idx))
+        # [4] temp의 0번째 요소는 오름차순, 1번째 요소는 내림차순 순서로 정렬
         temp.sort(key=lambda x: (-x[0], x[1]))
-        print("temp(2)", temp)
+        # [5] 가장 많이 재생된 노래 최대 두 개씩만 보여주기 때문
         temp = temp[:2]
-        print("temp(3)", temp)
+        # [6] 만약 (800, 0), (800, 3)과 같이 play가 중복된다면?
+        ## 아래와 같이 play+idx로 key를 만드는 방법으로 해결 (더 좋은 방법 없을까)
         for play, idx in temp:
-            test_map[play+idx] = idx
-            
-    for i in test_map:
-        answer.append(test_map[i])
-    print(answer)
+            play_map[play+idx] = idx
+
+    for i in play_map:
+        answer.append(play_map[i])
     
     return answer
-
-# 각 장르별로 길이 합해서 정렬? | "pop", "classic"
-# 장르 내에서 오름차순 정렬 & 딱 2개까지만 | "pop" : 2500, 600 & "classic" : 800, 500
-# 각 길이들에 대한 인덱스를 순서대로 answers에 넣어주기
-# answers에 인덱스가 들어가야 됨 => 어떤 식으로? pop 쭉, classic 쭉 ...
-# {pop: {2500 : 4, 600 : 1}, classic: {800 : 3, 500 : 0}}
-
-# 노래끼리는 오름차순
-# 장르 내에서 많이 재생된 노래 먼저
-# 속한 노래가 많이 재생된 장르 먼저
-# 에이 일단 다 더하는거네
-## hash_map
-# classic : 500 + 800 (150 X)
-# pop : 600 + 2500
-# pop > classic
-## pop : 2500(4), 600(1)
-## classic : 800(3), 500(0)
-
-# for i, g in enumerate(genre_list): # genre : pop => classic
-    #     for j, genre in enumerate(genres):
-    #         if g == genre:
-    #             test_map[g] = [plays[j]]
-    #         # if g == genre:
-    #         #     plays_map[plays[j]] = [j, 1]
