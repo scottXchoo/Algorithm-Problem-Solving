@@ -13,17 +13,17 @@ def dfs(depth, sum):
   else:
     if add > 0:
       add -= 1
-      dfs(depth+1, int(sum + data[depth]))
+      dfs(depth+1, sum + data[depth])
       add += 1
       
     if sub > 0:
       sub -= 1
-      dfs(depth+1, int(sum - data[depth]))
+      dfs(depth+1, sum - data[depth])
       sub += 1
       
     if mul > 0:
       mul -= 1
-      dfs(depth+1, int(sum * data[depth]))
+      dfs(depth+1, sum * data[depth])
       mul += 1
       
     if div > 0:
