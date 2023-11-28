@@ -11,11 +11,12 @@ for _ in range(N):
       curves.append((curves[k] + 1) % 4) # 0, 1, 2, 1 => 2, 3, 2, 1
 
   for curve in curves:
-    x += dx[curve]
-    y += dy[curve]
-    if x < 0 or x >= 101 or y < 0 or y >= 101:
+    nx = x + dx[curve]
+    ny = y + dy[curve]
+    if not(0 <= nx < 101 and 0 <= ny < 101):
       continue
-    maps[x][y] = 1
+    maps[nx][ny] = 1
+    x, y = nx, ny
 
 def get_count():
   global maps
