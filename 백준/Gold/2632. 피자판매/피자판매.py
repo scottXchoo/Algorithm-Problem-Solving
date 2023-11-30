@@ -9,8 +9,8 @@ for _ in range(N):
   b.append(int(input()))
 
 def get_cnt(arr, m):
-  cnt_a = [0] * (sum(arr) + 1)
-  cnt_a[0], cnt_a[-1] = 1, 1
+  cnt_arr = [0] * (sum(arr) + 1)
+  cnt_arr[0], cnt_arr[-1] = 1, 1
   for i in range(m):
     dq = deque(arr)
     for _ in range(i):
@@ -19,8 +19,8 @@ def get_cnt(arr, m):
     summ = 0
     while dq:
       summ += dq.popleft()
-      cnt_a[summ] += 1
-  return cnt_a
+      cnt_arr[summ] += 1
+  return cnt_arr
 
 cnt_a = get_cnt(a, M)
 cnt_b = get_cnt(b, N)
