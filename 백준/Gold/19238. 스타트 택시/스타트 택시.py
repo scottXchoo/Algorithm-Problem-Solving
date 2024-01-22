@@ -64,7 +64,7 @@ def depart_bfs(r, c, pdr, pdc):
 q = deque()
 q.append((t_r, t_c))
 # 연료가 다 떨어지거나 더 태울 승객이 없을 때까지
-while fuel > 0 or len(passenger) != 0:
+while fuel > 0 and len(passenger) != 0:
   # 현재 택시 기준으로 가장 가까운 사람 찾기
   s_r, s_c = q.popleft()
   candidate, used_fuel = find_bfs(s_r, s_c, passenger)
