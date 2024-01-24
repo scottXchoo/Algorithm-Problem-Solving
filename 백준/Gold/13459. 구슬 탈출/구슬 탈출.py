@@ -56,8 +56,5 @@ while queue:
         n_bc -= dc
     queue.append([n_rr, n_rc, n_br, n_bc, cnt+1])
     visited.add((n_rr, n_rc, n_br, n_bc))
-  else:
-    continue
-  break
 
 print(answer)
