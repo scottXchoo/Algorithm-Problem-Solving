@@ -1,48 +1,67 @@
+'''
+<문제 분석>
+꼭 벽 3개를 다 세워야 된다.
+안전 영역 : 바이러스(2)가 다 퍼진 뒤, 0의 개수
+안전 영역 크기의 최댓값을 구하는 프로그램을 작성하시오
+
+<제한 조건>
+3 <= N, M <= 8
+2 <= 바이러스(2) <= 10
+
+<아이디어>
+1. 주어진 map에 벽 3개를 세운다.
+ - 3개는 조합으로 정한다.
+2. 3개를 세운 뒤, 바이러스를 퍼뜨린다.
+ - 바이러스의 위치도 필요하겠다.
+3. 바이러스가 다 퍼진 벽에 있는 0의 개수를 세고 업데이트한다.
+'''
+
 from itertools import combinations
 from collections import deque
 import copy
 
-def bfs(r, c, map):
-  visited = [[False] * M for _ in range(N)]
-  dr, dc = [0, 1, 0, -1], [1, 0, -1, 0]
-
-  q = deque()
-  q.append((r, c))
-  visited[r][c] = True
-  while q:
-    cur_r, cur_c = q.popleft()
-    for i in range(4):
-      next_r = cur_r + dr[i]
-      next_c = cur_c + dc[i]
-      if 0 <= next_r < N and 0 <= next_c < M and map[next_r][next_c] != 1:
-        if not visited[next_r][next_c]:
-          if map[next_r][next_c] == 0:
-            map[next_r][next_c] = 2
-            q.append((next_r, next_c))
-            visited[next_r][next_c] = True
-
 N, M = map(int, input().split())
 maps = [list(map(int, input().split())) for _ in range(N)]
 
-walls, virus = [], []
+blanks, virus = [], []
 for i in range(N):
   for j in range(M):
     if maps[i][j] == 0:
-      walls.append((i, j))
+      blanks.append((i, j))
     if maps[i][j] == 2:
       virus.append((i, j))
-    
+
+def is_in_range(r, c):
+  return 0 <= r < N and 0 <= c < M
+
+def bfs(board):
+  visited = [[0] * M for _ in range(N)]
+  q = deque()
+  for r, c in virus:
+    q.append((r, c))
+    visited[r][c] = 1
+  
+  while q:
+    c_r, c_c = q.popleft()
+    for dr, dc in [[1, 0], [-1, 0], [0, 1], [0, -1]]:
+      n_r = c_r + dr
+      n_c = c_c + dc
+      if is_in_range(n_r, n_c) and not visited[n_r][n_c]:
+        if board[n_r][n_c] == 0:
+          q.append((n_r, n_c))
+          board[n_r][n_c] = 2
+          visited[n_r][n_c] = 1
+
 answer = 0
-for wall in combinations(walls, 3):
+for combi in combinations(blanks, 3):
   cnt = 0
   temp = copy.deepcopy(maps)
-  for i, j in wall:
+  for i, j in combi:
     temp[i][j] = 1
-  for r, c in virus:
-    bfs(r, c, temp)
-  for n in range(N):
-    for m in range(M):
-      if temp[n][m] == 0:
+  bfs(temp)
+  for i in range(N):
+    for j in range(M):
+      if temp[i][j] == 0:
         cnt += 1
   answer = max(answer, cnt)
 
