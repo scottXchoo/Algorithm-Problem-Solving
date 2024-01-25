@@ -1,57 +1,57 @@
+'''
+<문제분석>
+(x, y) => (r, c)
+미로 탈출 조건
+1. 격자 바깥 X
+2. (x, y)에서 (r, c)까지 이동하는 거리가 총 k (두 번 이상 방문 괜찮)
+3. 미로에서 탈출한 경로를 문자열로 나타냈을 때, 문자열이 사전 순으로 가장 빠른 경로로 탈출
+d: 아래쪽, l: 왼쪽, r: 오른쪽, u: 위쪽
+
+<제한사항>
+2 <= n, m <= 50
+(x, y) != (r, c)
+1 <= k <= 2500
+
+<아이디어>
+dlru 순서로 ddddd부터 하나씩 맞는지 체크
+아니면, 다시 뒤로 빽(백트래킹)
+미로를 탈출할 수 없으면, "impossible"
+
+- 남은 거리(dist?) > 갈 수 있는 거리(k - dist)
+- [k - dist]가 홀수면, 애초에 못 감 (도착한 뒤, 왔다갔다 - 짝수)
+
+maps를 따로 만든다.
+index에서 바로바로 path를 갖고 있으면 될 듯?
+'''
 import sys
 sys.setrecursionlimit(5000)
 
 def solution(n, m, x, y, r, c, k):
-    routes = []
-    maps = [["."] * m for _ in range(n)]
+    dx, dy = [1, 0, 0, -1], [0, -1, 1, 0]
+    direction = ['d', 'l', 'r', 'u']
+    distance = abs(x - r) + abs(y - c)
+    if (distance > k) or (k - distance) % 2 == 1:
+        return "impossible"
     
-    def dist_num(x, y):
-        return abs(x - r + 1) + abs(y - c + 1)
-    
-    def router(routes):
-        answer  = ''
-        for r in routes:
-            if r == 0:
-                answer += 'd'
-            elif r == 1:
-                answer += 'l'
-            elif r == 2:
-                answer += 'r'
-            elif r == 3:
-                answer += 'u'
-        return answer
-    
-    def is_in_range(x, y):
-        return 0 <= x < n and 0 <= y < m
-    
-    def dfs(depth, x, y):
-        dx, dy = [1, 0, 0, -1], [0, -1, 1, 0]
-        
-        if k - depth < dist_num(x, y):
+    def dfs(c_x, c_y, d):
+        if (d == k) and (c_x == r) and (c_y == c):
             return True
-        elif depth == k:
-            if (x == r-1 and y == c-1) and (k - depth) % 2 == 0:
-                return False
-            else:
-                return True
-            
+        elif not (0 < c_x <= n and 0 < c_y <= m):
+            return False
+        elif (abs(c_x - r) + abs(c_y - c)) > (k - d):
+            return False
+        
         for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-            if is_in_range(nx, ny):
-                routes.append(i)
-                if dfs(depth+1, nx, ny):
-                    routes.pop()
-                else:
-                    return False
-        return True
+            n_x, n_y = c_x + dx[i], c_y + dy[i]
+            route.append(direction[i])
+            if dfs(n_x, n_y, d+1):
+                return True
+            else:
+                route.pop()
+        return False
     
-    dist = dist_num(x-1, y-1)
-    if dist > k or (k - dist) % 2 == 1: # 이동 거리보다 k가 작으면, 애초에 못 감
-        return "impossible"
-    
-    if dfs(0, x-1, y-1):
-        return "impossible"
+    route = []
+    if dfs(x, y, 0):
+        return "".join(route)
     else:
-        answer = router(routes)
-        return answer
+        return "impossible"
