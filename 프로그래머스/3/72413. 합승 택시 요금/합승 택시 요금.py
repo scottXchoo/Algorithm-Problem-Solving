@@ -7,45 +7,24 @@ def solution(n, s, a, b, fares):
     for u, v, w in fares:
         graph[u].append((w, v))
         graph[v].append((w, u))
-    
-    def mid_dijkstra(start, mid):
-        visited = [sys.maxsize] * (n + 1)
-        visited[start] = 0
-        pq = []
-        heappush(pq, (0, start))
         
-        while pq:
-            c_fare, c_node = heappop(pq)
-            for fare, n_node in graph[c_node]:
-                n_fare = fare + c_fare
-                if n_fare < visited[n_node]:
-                    visited[n_node] = n_fare
-                    heappush(pq, (n_fare, n_node))
-                    
-        return mid, visited[mid]
+    answer = sys.maxsize
+    costs = [[sys.maxsize for _ in range(n+1)] for _ in range(3)]
     
-    def dijkstra(mid, m_fare):
-        visited = [sys.maxsize] * (n + 1)
-        visited[mid] = m_fare
-        pq = []
-        heappush(pq, (m_fare, mid))
+    for idx, s_node in enumerate([s, a, b]):
+        heap = []
+        heappush(heap, (0, s_node))
+        costs[idx][s_node] = 0
         
-        while pq:
-            c_fare, c_node = heappop(pq)
-            for fare, n_node in graph[c_node]:
-                n_fare = fare + c_fare
-                if n_fare < visited[n_node]:
-                    visited[n_node] = n_fare
-                    heappush(pq, (n_fare, n_node))
-                    
-        return visited[a], visited[b]
+        while heap:
+            c_cost, c_node = heappop(heap)
+            for cost, n_node in graph[c_node]:
+                n_cost = c_cost + cost
+                if n_cost < costs[idx][n_node]:
+                    costs[idx][n_node] = n_cost
+                    heappush(heap, (n_cost, n_node))
+        
+        for idx in range(n+1):
+            answer = min(answer, costs[0][idx] + costs[1][idx] + costs[2][idx])
     
-    arr = []
-    for m in range(1, n+1):
-        ans = 0
-        m_node, m_fare = mid_dijkstra(s, m)
-        a_fare, b_fare = dijkstra(m_node, m_fare)
-        ans = a_fare + b_fare - m_fare
-        arr.append(ans)
-    
-    return min(arr)
+    return answer
