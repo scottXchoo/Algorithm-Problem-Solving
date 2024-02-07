@@ -6,6 +6,6 @@
 ## 1) 새로운 col(AVERAGE_FEE)는 어떻게 만들지?
 ## 2) AVG()를 활용하는 것 맞나? 소수 첫 번째 자리에서 반올림 어떻게 하지?
 -- 코드를 입력하세요
-SELECT ROUND(AVG(DAILY_FEE), 0) as AVERAGE_FEE
+SELECT ROUND(SUM(DAILY_FEE) / COUNT(*), 0) as AVERAGE_FEE
 FROM CAR_RENTAL_COMPANY_CAR
 WHERE CAR_TYPE = 'SUV'
