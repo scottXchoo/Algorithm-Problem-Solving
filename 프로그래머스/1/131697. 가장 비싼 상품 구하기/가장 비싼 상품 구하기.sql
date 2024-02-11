@@ -1,0 +1,8 @@
+-- 코드를 입력하세요
+# ID의 앞 2자리는 카테고리 코드 의미
+SELECT PRICE as MAX_PRICE
+FROM PRODUCT
+WHERE PRICE = (
+    SELECT MAX(PRICE)
+    FROM PRODUCT
+)
