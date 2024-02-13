@@ -2,7 +2,7 @@ import sys, copy
 
 def solution(s):
     answer = 0
-    length = len(s)
+    length = len(s) // 2
     
     def check_slice(slice_num, s):
         cnt = 1
@@ -16,7 +16,7 @@ def solution(s):
         return cnt, word, s
 
     answer = sys.maxsize
-    for slice_num in range(1, length+1):
+    for slice_num in range(1, length+2):
         temp = copy.copy(s)
         ans = ""
         while len(temp) != 0:
