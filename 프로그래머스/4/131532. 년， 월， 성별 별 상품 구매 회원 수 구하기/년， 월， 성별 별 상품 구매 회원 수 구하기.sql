@@ -1,0 +1,9 @@
+# 년, 월, 성별 별로
+# 상품을 구매한 회원수 집계
+# 성별 정보가 없는 경우 제외 WHERE GENDER is not NULL
+# 년, 월, 성별 asc
+SELECT YEAR(SALES_DATE) as YEAR, MONTH(SALES_DATE) as MONTH, GENDER, COUNT(distinct USER_ID) as USERS
+FROM USER_INFO join ONLINE_SALE using(USER_ID)
+WHERE GENDER is not NULL
+GROUP BY YEAR, MONTH, GENDER
+ORDER BY YEAR, MONTH, GENDER
