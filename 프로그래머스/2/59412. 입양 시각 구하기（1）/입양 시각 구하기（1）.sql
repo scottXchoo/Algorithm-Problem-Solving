@@ -1,0 +1,9 @@
+# 09:00 ~ 19:59까지
+# 각 시간대별로
+# 입양이 몇 건 발생했는지
+# 시간순 asc
+SELECT HOUR(DATETIME) as HOUR, COUNT(DATETIME) as COUNT
+FROM ANIMAL_OUTS
+WHERE HOUR(DATETIME) between '9' and '19'
+GROUP BY HOUR
+ORDER BY HOUR
