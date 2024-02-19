@@ -1,6 +1,10 @@
 # 코딩테스트 대비 문제집 (백준, 프로그래머스, LeetCode)
 
-[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ckh0601)](https://solved.ac/ckh0601/)
+2024년 기준 **네카라쿠배 + 삼성 등**의 코딩테스트에 자주 나오는 유형별로 제가 직접 문제들을 풀어보고 나름 엄격하게 선별하여 정리하고 있습니다.
+
+**코딩테스트 일주일 전**, 풀면 좋을 만한 문제들이니 참고하시고 꼭 코딩테스트 합격하시길 기원하겠습니다.
+
+<br/>
 
 ## Implementaion & Simulation | 구현 & 시뮬레이션
 ### 백준
@@ -12,6 +16,8 @@
 |AC|Gold 5|[BOJ 5430](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/5430.%E2%80%85AC/AC.py)||
 |톱니바퀴(2)|Gold 5|[BOJ 15662](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/15662.%E2%80%85%ED%86%B1%EB%8B%88%EB%B0%94%ED%80%B4%E2%80%85%EF%BC%882%EF%BC%89/%ED%86%B1%EB%8B%88%EB%B0%94%ED%80%B4%E2%80%85%EF%BC%882%EF%BC%89.py)||
 |마인크래프트|Silver 2|[BOJ 18111](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/18111.%E2%80%85%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8/%EB%A7%88%EC%9D%B8%ED%81%AC%EB%9E%98%ED%94%84%ED%8A%B8.py)||
+
+<br/>
 
 ## BFS | 너비 우선 탐색
 ### 백준
@@ -25,6 +31,7 @@
 |불 !|Gold 4|[BOJ 12851](https://github.com/scottXchoo/Algorithm_Problem_Solving/tree/main/%EB%B0%B1%EC%A4%80/Gold/4179.%E2%80%85%EB%B6%88%EF%BC%81)||
 |인구이동|Gold 4|[BOJ 16234](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/16234.%E2%80%85%EC%9D%B8%EA%B5%AC%E2%80%85%EC%9D%B4%EB%8F%99/%EC%9D%B8%EA%B5%AC%E2%80%85%EC%9D%B4%EB%8F%99.py)||
 
+<br/>
 
 ## DFS | 깊이 우선 탐색
 ### 백준
@@ -38,6 +45,8 @@
 |컴백홈|Silver 1|[BOJ 1189](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/1189.%E2%80%85%EC%BB%B4%EB%B0%B1%ED%99%88/%EC%BB%B4%EB%B0%B1%ED%99%88.py)||
 |꽃길|Silver 2|[BOJ 14620](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/14620.%E2%80%85%EA%BD%83%EA%B8%B8/%EA%BD%83%EA%B8%B8.py)||
 
+<br/>
+
 ## Greedy | 그리디 알고리즘
 ### 백준
 |**문제 이름**|**난이도**|**링크**|**비고**|
@@ -45,6 +54,8 @@
 |멀티탭 스케줄링|Gold 1|[BOJ 1700](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1700.%E2%80%85%EB%A9%80%ED%8B%B0%ED%83%AD%E2%80%85%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81/%EB%A9%80%ED%8B%B0%ED%83%AD%E2%80%85%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.py)||
 |순회강연|Gold 3|[BOJ 2109](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/2109.%E2%80%85%EC%88%9C%ED%9A%8C%EA%B0%95%EC%97%B0/%EC%88%9C%ED%9A%8C%EA%B0%95%EC%97%B0.py)||
 |흙길 보수하기|Gold 5|[BOJ 1911](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1911.%E2%80%85%ED%9D%99%EA%B8%B8%E2%80%85%EB%B3%B4%EC%88%98%ED%95%98%EA%B8%B0/%ED%9D%99%EA%B8%B8%E2%80%85%EB%B3%B4%EC%88%98%ED%95%98%EA%B8%B0.py)||
+
+<br/>
 
 ## Stack &  Queue | 스택과 큐
 ### 백준
@@ -54,11 +65,15 @@
 |현욱이는 괄호왕이야|Gold 3|[BOJ 15926](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/15926.%E2%80%85%ED%98%84%EC%9A%B1%EC%9D%80%E2%80%85%EA%B4%84%ED%98%B8%EC%99%95%EC%9D%B4%EC%95%BC%EF%BC%81%EF%BC%81/%ED%98%84%EC%9A%B1%EC%9D%80%E2%80%85%EA%B4%84%ED%98%B8%EC%99%95%EC%9D%B4%EC%95%BC%EF%BC%81%EF%BC%81.py)||
 |프린터 큐|Silver 3|[BOJ 1966](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Silver/1966.%E2%80%85%ED%94%84%EB%A6%B0%ED%84%B0%E2%80%85%ED%81%90/%ED%94%84%EB%A6%B0%ED%84%B0%E2%80%85%ED%81%90.py)||
 
+<br/>
+
 ## Dynamic Programming | 동적 프로그래밍
 ### 백준
 |**문제 이름**|**난이도**|**링크**|**비고**|
 |------|---|---|---|
 |뮤탈리스크|Gold 4|[BOJ 12869](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/12869.%E2%80%85%EB%AE%A4%ED%83%88%EB%A6%AC%EC%8A%A4%ED%81%AC/%EB%AE%A4%ED%83%88%EB%A6%AC%EC%8A%A4%ED%81%AC.py)||
+
+<br/>
 
 ## Two Pointer | 투 포인터
 ### 백준
@@ -67,6 +82,7 @@
 |소수의 연속합|Gold 3|[BOJ 1644](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/1644.%E2%80%85%EC%86%8C%EC%88%98%EC%9D%98%E2%80%85%EC%97%B0%EC%86%8D%ED%95%A9/%EC%86%8C%EC%88%98%EC%9D%98%E2%80%85%EC%97%B0%EC%86%8D%ED%95%A9.py)||
 |List of Unique Numbers|Gold 4|[BOJ 13144](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/13144.%E2%80%85List%E2%80%85of%E2%80%85Unique%E2%80%85Numbers/List%E2%80%85of%E2%80%85Unique%E2%80%85Numbers.py)||
 
+<br/>
 
 ## Bit-Mask | 비트마스크
 ### 백준
