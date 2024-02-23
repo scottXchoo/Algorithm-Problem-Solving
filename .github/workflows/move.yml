@@ -1,41 +1,41 @@
-name: Move New Folder to LeetCode
+# name: Move New Folder to LeetCode
 
-on:
-  push:
-    branches: [main]
-    paths:
-      - '*/**' # 모든 최상위 디렉토리 내의 변경 사항에 대해 반응합니다.
+# on:
+#   push:
+#     branches: [main]
+#     paths:
+#       - '*/**' # 모든 최상위 디렉토리 내의 변경 사항에 대해 반응합니다.
 
-jobs:
-  move-folder:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: '0' # 모든 커밋을 가져옵니다.
+# jobs:
+#   move-folder:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#       with:
+#         fetch-depth: '0' # 모든 커밋을 가져옵니다.
 
-    - name: Move new folder to LeetCode
-      run: |
-        # 마지막 커밋에서 추가된 모든 항목을 찾습니다.
-        ADDED_ITEMS=$(git diff --diff-filter=A --name-only ${{ github.event.before }} ${{ github.sha }})
-        echo "Added items: $ADDED_ITEMS"
+#     - name: Move new folder to LeetCode
+#       run: |
+#         # 마지막 커밋에서 추가된 모든 항목을 찾습니다.
+#         ADDED_ITEMS=$(git diff --diff-filter=A --name-only ${{ github.event.before }} ${{ github.sha }})
+#         echo "Added items: $ADDED_ITEMS"
         
-        # 추가된 항목들 중 최상위 디렉토리만 찾아 LeetCode 폴더로 이동합니다.
-        for ITEM in $ADDED_ITEMS; do
-          if [[ -d $ITEM && $ITEM != "LeetCode/" && $ITEM != "LeetCode/*" ]]; then
-            # 최상위 디렉토리를 LeetCode 폴더로 이동합니다.
-            mv $ITEM LeetCode/
-            # 변경 사항을 커밋합니다.
-            git add .
-            git commit -m "Move $ITEM to LeetCode directory"
-          fi
-        done
+#         # 추가된 항목들 중 최상위 디렉토리만 찾아 LeetCode 폴더로 이동합니다.
+#         for ITEM in $ADDED_ITEMS; do
+#           if [[ -d $ITEM && $ITEM != "LeetCode/" && $ITEM != "LeetCode/*" ]]; then
+#             # 최상위 디렉토리를 LeetCode 폴더로 이동합니다.
+#             mv $ITEM LeetCode/
+#             # 변경 사항을 커밋합니다.
+#             git add .
+#             git commit -m "Move $ITEM to LeetCode directory"
+#           fi
+#         done
 
-        # 이동된 항목이 있으면 푸시합니다.
-        if git status | grep -q 'Changes to be committed'; then
-          git push origin main
-        else
-          echo "No changes to push"
-        fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         # 이동된 항목이 있으면 푸시합니다.
+#         if git status | grep -q 'Changes to be committed'; then
+#           git push origin main
+#         else
+#           echo "No changes to push"
+#         fi
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
