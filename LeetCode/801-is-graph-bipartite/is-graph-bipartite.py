@@ -24,7 +24,7 @@ class Solution:
                 if colors[n_node] != 0 and colors[n_node] == colors[node]:
                     answer = False
                     break
-                if colors[n_node] == 0:
+                elif colors[n_node] == 0:
                     dfs(depth+1, n_node, graphs, colors)
         
         for i in range(n):
