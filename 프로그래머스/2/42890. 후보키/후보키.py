@@ -1,29 +1,25 @@
-from itertools import combinations as combi
+from itertools import combinations
 
 def solution(relation):
-    row, col = len(relation), len(relation[0])
+    row_size = len(relation) # 행 수
+    col_size = len(relation[0]) # 열 수
     
-    # 전체 조합
-    candidates = []
-    cols = [i for i in range(col)]
-    for i in range(1, col + 1):
-        candidates.extend(combi(cols, i))
-        # candidates.extend(combi(range(col), i))
+    def check_unique(cand, relation): 
+        temp = [tuple(item[key] for key in cand) for item in relation]
+        if len(set(temp)) == len(temp):
+            return True
+        return False
+
+    def check_min(cand, cand_keys):
+        for key in cand_keys:
+            if key.issubset(cand):
+                return False
+        return True
     
-    # 유일성
-    unique = []
-    for candi in candidates:
-        tmp = []
-        for item in relation:
-            tmp.append(tuple(item[i] for i in candi))
-        if len(set(tmp)) == row:
-            unique.append(candi)
-    
-    # 최소성
-    answer = set(unique)
-    for i in range(len(unique)):
-        for j in range(i+1, len(unique)):
-            if set(unique[i]).issubset(set(unique[j])):
-                answer.discard(unique[j])
+    candidates = [] # 후보키 조합
+    for size in range(1, col_size + 1):
+        for comb in combinations(range(col_size), size):
+            if check_unique(comb, relation) and check_min(comb, candidates):
+                candidates.append(set(comb))
                 
-    return len(answer)
+    return len(candidates)
