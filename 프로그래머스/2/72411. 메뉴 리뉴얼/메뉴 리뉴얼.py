@@ -7,7 +7,8 @@ def solution(orders, course):
     for k in course:
         candidates = []
         for order in orders:
-            candidates += combinations(sorted(order), k)
+            candidates.extend(combinations(sorted(order), k))
+            
         common = Counter(candidates).most_common()
         for c, cnt in common:
             if cnt >= 2 and cnt == common[0][1]:
