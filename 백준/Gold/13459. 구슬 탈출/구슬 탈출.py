@@ -15,46 +15,49 @@ for i in range(N):
 
 def move(r, c, dr, dc):
   cnt = 0
+  nr, nc = r, c
   while True:
-    r += dr
-    c += dc
-    pre_r = r - dr
-    pre_c = c - dc
+    prev_nr, prev_nc = nr, nc
+    nr += dr
+    nc += dc
     cnt += 1
-    if board[r][c] == "#":
-      return pre_r, pre_c, cnt
-    if board[r][c] == "O":
-      return r, c, cnt
+    if board[nr][nc] == "#":
+      return prev_nr, prev_nc, cnt
+    elif board[nr][nc] == "O":
+      return nr, nc, cnt
 
 answer = 0
-queue = deque()
-visited = set()
 
-queue.append([rr, rc, br, bc, 0])
+dq = deque()
+dq.append((rr, rc, br, bc, 1))
+
+visited = set()
 visited.add((rr, rc, br, bc))
 
-while queue:
-  c_rr, c_rc, c_br, c_bc, cnt = queue.popleft()
-  if cnt >= 10:
+while dq:
+  c_rr, c_rc, c_br, c_bc, level = dq.popleft()
+  if level > 10:
     break
-  for dr, dc in [[0,1],[1,0],[0,-1],[-1,0]]: # 오른, 아래, 왼, 위
-    n_rr, n_rc, r_d = move(c_rr, c_rc, dr, dc)
-    n_br, n_bc, b_d = move(c_br, c_bc, dr, dc)
+  for dr, dc in [[1, 0], [-1, 0], [0, 1], [0, -1]]:
+    n_rr, n_rc, r_cnt = move(c_rr, c_rc, dr, dc)
+    n_br, n_bc, b_cnt = move(c_br, c_bc, dr, dc)
     if board[n_br][n_bc] == "O":
       continue
-    if (n_rr, n_rc, n_br, n_bc) in visited:
-      continue
-    if board[n_rr][n_rc] == "O":
-      answer = 1
-      break
-    if n_rr == n_br and n_rc == n_bc: # 빨간공과 파란공 같은 위치일 때
-      if r_d >= b_d: # 빨간공이 더 뒤에 있었다는 얘기
-        n_rr -= dr
-        n_rc -= dc
-      else: # 파란공이 더 뒤에 있었다는 얘기
-        n_br -= dr
-        n_bc -= dc
-    queue.append([n_rr, n_rc, n_br, n_bc, cnt+1])
-    visited.add((n_rr, n_rc, n_br, n_bc))
+    if (n_rr, n_rc, n_br, n_bc) not in visited:
+      if (n_rr == n_br) and (n_rc == n_bc):
+        if r_cnt > b_cnt:
+          n_rr -= dr
+          n_rc -= dc
+        else:
+          n_br -= dr
+          n_bc -= dc
+      if board[n_rr][n_rc] == "O":
+        answer = 1
+        break
+      dq.append((n_rr, n_rc, n_br, n_bc, level+1))
+      visited.add((n_rr, n_rc, n_br, n_bc))
+  else:
+    continue
+  break
 
 print(answer)
