@@ -1,32 +1,26 @@
-import sys, copy
-
 def solution(s):
-    answer = 0
-    length = len(s) // 2
-    
-    def check_slice(slice_num, s):
-        cnt = 1
-        word = s[:slice_num]
-        s = s[slice_num:]
-        
-        while word == s[:slice_num]:
-            cnt += 1
-            s = s[slice_num:]
-        
-        return cnt, word, s
+    str_len = len(s)
+    result = str_len
 
-    answer = sys.maxsize
-    for slice_num in range(1, length+2):
-        temp = copy.copy(s)
-        ans = ""
-        while len(temp) != 0:
-            cnt, word, temp = check_slice(slice_num, temp)
-            if cnt != 1:
-                ans += str(cnt) + str(word)
+    for size in range(1, str_len // 2 + 1):
+        words = []
+        for i in range(0, str_len, size):
+            words.append(s[i:i+size])
+
+        stack = [[words[0], 1]]
+        for word in words[1:]:
+            if stack[-1][0] == word:
+                tmp = stack.pop()
+                stack.append([tmp[0], tmp[1] + 1])
             else:
-                ans += str(word)
-                
-        if len(ans) != 0:
-            answer = min(answer, len(ans))
-    
-    return answer
+                stack.append([word, 1])
+
+        answer = ""
+        for word, cnt in stack:
+            if cnt > 1:
+                answer += str(cnt)
+            answer += word
+
+        result = min(result, len(answer))
+
+    return result
