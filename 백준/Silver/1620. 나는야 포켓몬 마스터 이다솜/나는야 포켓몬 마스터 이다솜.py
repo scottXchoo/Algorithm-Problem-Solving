@@ -6,12 +6,12 @@ name_dict = defaultdict()
 index_dict = defaultdict()
 
 for i in range(N):
-    name = input().rstrip()
+    name = input()
     name_dict[name] = i + 1
     index_dict[i + 1] = name
 
 for _ in range(M):
-    problem = input().rstrip()
+    problem = input()
     if problem.isdigit():
         print(index_dict[int(problem)])
     else:
