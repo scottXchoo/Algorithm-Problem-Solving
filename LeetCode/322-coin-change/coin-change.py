@@ -1,13 +1,19 @@
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        dp = [0] + ([float('inf')]) * amount
+        memo = {}
 
-        for i in range(1, amount + 1):
+        def dp(amount):
+            if amount == 0:
+                return 0
+
+            retList = []
             for coin in coins:
-                if coin <= i:
-                    dp[i] = min(dp[i], dp[i - coin] + 1)
-        
-        if dp[-1] == float('inf'):
-            return -1
-            
-        return dp[-1]
+                remain_amount = amount - coin
+                if remain_amount >= 0:
+                    if remain_amount not in memo:
+                        memo[remain_amount] = dp(remain_amount)
+                    if memo[remain_amount] != -1:
+                        retList.append(memo[remain_amount])
+            return min(retList) + 1 if retList else -1
+
+        return dp(amount)
