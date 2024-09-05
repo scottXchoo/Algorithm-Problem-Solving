@@ -4,15 +4,19 @@
 
 ### 성능 요약
 
-메모리: 113112 KB, 시간: 112 ms
+메모리: 2020 KB, 시간: 0 ms
 
 ### 분류
 
 기하학, 수학, 피타고라스 정리
 
+### 제출 일자
+
+2024년 9월 5일 10:48:58
+
 ### 문제 설명
 
-<p><img alt="" src="" style="float:right; height:229px; width:252px"> 과거 이집트인들은 각 변들의 길이가 3, 4, 5인 삼각형이 직각 삼각형인것을 알아냈다. 주어진 세변의 길이로 삼각형이 직각인지 아닌지 구분하시오.</p>
+<p><img alt="" src="https://www.acmicpc.net/upload/images3/rope-triangle.gif" style="float:right; height:229px; width:252px"> 과거 이집트인들은 각 변들의 길이가 3, 4, 5인 삼각형이 직각 삼각형인것을 알아냈다. 주어진 세변의 길이로 삼각형이 직각인지 아닌지 구분하시오.</p>
 
 ### 입력 
 
