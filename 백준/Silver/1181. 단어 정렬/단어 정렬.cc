@@ -1,27 +1,33 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
+
 using namespace std;
 
-bool compareWith(string a, string b) {
-    if(a.length() == b.length())
-        return a < b;
-    return a.length() < b.length();
+int compare(const string &a, const string &b) {
+  // 길이 같으면, 사전 순서
+  if (a.length() == b.length()) {
+	return a < b;
+	// 길이 다르면, 짧은 것부터
+  } else {
+	return a.length() < b.length();
+  }
 }
 
+string word[20000];
 int main() {
-    int N;
-    vector<string> vec;
-    cin >> N;
-    
-    for(int i = 0; i < N; i++) {
-        string str;
-        cin >> str;
-        if(find(vec.begin(), vec.end(), str) == vec.end()) {
-            vec.push_back(str);
-        }
-    }
-    sort(vec.begin(), vec.end(), compareWith);
-    
-    for(int i = 0; i < vec.size(); i++) {
-        cout << vec[i] << '\n';
-    }
+  int N;
+  cin >> N;
+  for (int i = 0; i < N; i++) {
+	cin >> word[i];
+  }
+
+  sort(word, word + N, compare);
+
+  for (int i = 0; i < N; i++) {
+	if (word[i] == word[i - 1]) continue;
+
+	cout << word[i] << "\n";
+  }
+
+  return 0;
 }
