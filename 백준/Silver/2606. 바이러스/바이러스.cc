@@ -6,7 +6,7 @@ using namespace std;
 
 // BFS에 필요한 재료들
 int graph[MAX][MAX];
-int visited[MAX] = {0,};
+int visited[MAX];
 queue<int> q;
 
 // 입력 변수들
