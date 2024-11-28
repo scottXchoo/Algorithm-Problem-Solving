@@ -7,9 +7,8 @@ int N;
 
 int main() {
   cin.tie(0)->sync_with_stdio(0);
-
-  int n, n_2, below_n;
-  int imsi_N, cnt, min_cnt;
+  
+  int n, imsi_N, cnt, min_cnt;
 
   cin >> N;
 
@@ -20,9 +19,7 @@ int main() {
   dp[4] = 1;
 
   for (int i = 5; i <= N; i++) {
-	n = sqrt(i);
-	n_2 = n * n;
-	below_n = i - n_2;
+	n = floor(sqrt(i));
 	min_cnt = 4;
 
 	for (int j = 1; j <= n; j++) {
