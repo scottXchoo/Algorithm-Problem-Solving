@@ -1,39 +1,54 @@
 #include <iostream>
+#include <vector>
+#include <stack>
 #include <algorithm>
 
-#define MAX 200001
 using namespace std;
 
-vector<int> graph[MAX];
-int visited[MAX];
-int answer[MAX];
-int seq = 1;
-
-void dfs(int n_n, int depth) {
-    sort(graph[n_n].begin(), graph[n_n].end());
-    for (int nn_n : graph[n_n]) {
-        if (visited[nn_n]) continue;
-        answer[nn_n] = ++seq;
-        visited[nn_n] = 1;
-        dfs(nn_n, depth+1);
-    }
-}
-
-int main() {
+int main()
+{
     int N, M, R;
-    cin >> N >> M >> R;
-    for (int i = 0; i < M; i++) {
-        int u, v;
-        cin >> u >> v;
-        graph[u].push_back(v);
-        graph[v].push_back(u);
+    cin >> N >> M >> R; // 정점수, 간선 수, 시작 정점
+
+    vector<vector<int> > edges(N);
+    vector<bool> visited(N, false);
+    vector<int> orders(N, 0);
+
+    int source, destination;
+    for (int i = 0; i < M; i++)
+    {
+        cin >> source >> destination;
+        edges[source-1].push_back(destination);
+        edges[destination-1].push_back(source);
     }
 
-    visited[R] = 1;
-    answer[R] = seq;
-    dfs(R, 0);
-    for (int i = 1; i <= N; i++) {
-        cout << answer[i] << '\n';
+    for (int i = 0; i < N; i++)
+    {
+        sort(edges[i].begin(), edges[i].end(), std::greater<int>());
+    }
+
+    stack<int> node_s;
+    node_s.push(R);
+
+    int order = 1;
+    while (!node_s.empty())
+    {
+        int current_node = node_s.top(); node_s.pop();
+        if (visited[current_node-1]) continue;
+        visited[current_node-1] = true;
+        orders[current_node-1] = order++;
+        for (auto adj_node: edges[current_node-1])
+        {
+            if (!visited[adj_node-1])
+            {
+                node_s.push(adj_node);
+            }
+        }
+    }
+
+    for (auto result: orders)
+    {
+        cout << result << '\n';
     }
 
     return 0;
