@@ -1,61 +1,110 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <queue>
+#include <cstring>
+
 using namespace std;
 
-int a[10][10], visited[10][10], n, m, ret;
-vector<pair<int, int>> virusList, wallList;
-const int dy[] = {-1, 0, 1, 0};
-const int dx[] = {0, 1, 0, -1};
+#define MAX 10
 
-void dfs(int y, int x) {
-    for(int i = 0; i < 4; i++) {
-        int ny = y + dy[i];
-        int nx = x + dx[i];
-        if(ny < 0 || ny >= n || nx < 0 || nx >= m || visited[ny][nx] || a[ny][nx] == 1) continue;
-        visited[ny][nx] = 1;
-        dfs(ny, nx);
-    }
-    return;
-}
+int N, M;
+int maps[MAX][MAX];
+int temp[MAX][MAX];
+int visited[MAX][MAX];
+int dx[4] = {1, -1, 0, 0}, dy[4] = {0, 0, 1, -1};
+int answer = 0;
 
-int solve() {
-    fill(&visited[0][0], &visited[0][0] + 10 * 10, 0);
-    for(pair<int, int> b : virusList) {
-        visited[b.first][b.second] = 1;
-        dfs(b.first, b.second);
-    }
-    
-    int cnt = 0;
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
-            if(a[i][j] == 0 && !visited[i][j]) cnt++;
+void copy(int temp[MAX][MAX], int maps[MAX][MAX]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            temp[i][j] = maps[i][j];
         }
     }
-    return cnt;
 }
 
-int main() {
-    cin >> n >> m;
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
-            cin >> a[i][j];
-            if(a[i][j] == 2) virusList.push_back({i, j});
-            if(a[i][j] == 0) wallList.push_back({i, j});
+void bfs() {
+    int after[MAX][MAX];
+    copy(after, temp);
+
+    // Virus 위치 넣기
+    queue<pair<int, int>> q;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            if (after[i][j] == 2) q.push({i, j});
         }
-    };
-    
-    for(int i = 0; i < wallList.size(); i++) {
-        for(int j = 0; j < i; j++) {
-            for(int k = 0; k < j; k++) {
-                a[wallList[i].first][wallList[i].second] = 1;
-                a[wallList[j].first][wallList[j].second] = 1;
-                a[wallList[k].first][wallList[k].second] = 1;
-                ret = max(ret, solve());
-                a[wallList[i].first][wallList[i].second] = 0;
-                a[wallList[j].first][wallList[j].second] = 0;
-                a[wallList[k].first][wallList[k].second] = 0;
+    }
+
+    // Virus 퍼뜨리기
+    while (!q.empty()) {
+        int x = q.front().first;
+        int y = q.front().second;
+        q.pop();
+
+        for (int k = 0; k < 4; k++) {
+            int nx = x + dx[k];
+            int ny = y + dy[k];
+
+            if (nx < 0 || nx >= N || ny < 0 || ny >= M) continue;
+            if (after[nx][ny] == 0) {
+                after[nx][ny] = 2;
+                q.push({nx, ny});
             }
         }
     }
-    cout << ret << "\n";
-    return 0;
+
+    //  안전구역 업데이트
+    int cnt = 0;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            if (after[i][j] == 0) cnt++;
+        }
+    }
+    answer = max(answer, cnt);
+}
+
+
+void wall(const int cur) {
+    if (cur == 3) {
+        // 새 벽이 3개 세워지면, bfs 돌기
+        bfs();
+        return;
+    }
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            if (temp[i][j] == 0) {
+                temp[i][j] = 1;
+                wall(cur + 1);
+                temp[i][j] = 0;
+            }
+        }
+    }
+}
+
+int main() {
+    // 입력
+    cin >> N >> M;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            cin >> maps[i][j];
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            if (maps[i][j] == 0) {
+                memset(visited, 0, sizeof(visited));
+                // 실제 map을 temp로 복사
+                copy(temp, maps);
+                // 새 벽을 하나 세우기
+                temp[i][j] = 1;
+                // 나머지 두 개의 새 벽 세우기
+                wall(1);
+                // 원상복귀
+                temp[i][j] = 0;
+            }
+        }
+    }
+
+    cout << answer;
 }
