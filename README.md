@@ -1,10 +1,8 @@
-# 코딩테스트 대비 문제집 by 백준, 프로그래머스, LeetCode
+# 코딩테스트 대비 문제집 by 백준
 
-### Updated by. 2024.09.05(화)
+### Updated 2024.10.08.
 
-## 코딩테스트 대비 문제집
-
-2024년 기준 **네카라쿠배 + 삼성 등**의 코딩테스트에 자주 나오는 유형별로 제가 직접 문제들을 풀어보고 선별하여 정리하고 있습니다.
+2025년 기준 **네카라쿠배 + 삼성 등**의 코딩테스트에 자주 나오는 유형별로 제가 직접 문제들을 풀어보고 선별하여 정리하고 있습니다.
 
 **코딩테스트 일주일 전**, 풀면 좋을 만한 문제들이니 참고하셔서 꼭 코딩테스트 합격하시길 기원하겠습니다.
 
@@ -14,6 +12,7 @@
 ### 백준
 |**문제 이름**|**난이도**|**링크**|**비고**|
 |------|---|---|---|
+|Puyo Puyo|Gold 4|[BOJ 11559](https://github.com/scottXchoo/Algorithm-Problem-Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/11559.%E2%80%85Puyo%E2%80%85Puyo/Puyo%E2%80%85Puyo.cc)||
 |경사로|Gold 3|[BOJ 14890](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/14890.%E2%80%85%EA%B2%BD%EC%82%AC%EB%A1%9C/%EA%B2%BD%EC%82%AC%EB%A1%9C.py)||
 |뱀|Gold 4|[BOJ 3190](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/3190.%E2%80%85%EB%B1%80/%EB%B1%80.py)|삼성 기출|
 |미세먼지 안녕!|Gold 4|[BOJ 17144](https://github.com/scottXchoo/Algorithm_Problem_Solving/blob/main/%EB%B0%B1%EC%A4%80/Gold/17144.%E2%80%85%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%E2%80%85%EC%95%88%EB%85%95%EF%BC%81/%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80%E2%80%85%EC%95%88%EB%85%95%EF%BC%81.py)||
