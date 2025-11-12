@@ -11,7 +11,6 @@ int maps[MAX][MAX]{};
 int visited[MAX][MAX][5]{};
 int dx[5] = {0, 0, 1, -1};
 int dy[5] = {1, -1, 0, 0};
-int flag = 0;
 int answer = 1e9;
 
 void input() {
@@ -26,7 +25,7 @@ void input() {
     }
 }
 
-void bfs() {
+int bfs() {
     queue<tuple<int, int, int, int>> q;
     q.push({1, 1, 1, 0}); // x, y, 거리, 벽 뚫은 여부
     visited[1][1][0] = 1;
@@ -40,8 +39,7 @@ void bfs() {
 
         if (cx == N && cy == M) {
             answer = min(answer, dist);
-            flag = 1;
-            continue; // 도달하면, 더 진행할 필요 없잖아?
+            return answer;
         }
 
         for (int i = 0; i < 4; i++) {
@@ -60,18 +58,14 @@ void bfs() {
             }
         }
     }
+    return -1;
 }
 
 int main() {
     input();
 
-    bfs();
-
-    if (flag) {
-        cout << answer;
-    } else {
-        cout << -1;
-    }
+    int answer = bfs();
+    cout << answer;
 
     return 0;
 }
