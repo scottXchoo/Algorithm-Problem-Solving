@@ -63,7 +63,6 @@ int bfs() {
 int main() {
     input();
 
-    memset(visited, 0, sizeof(visited));
     int answer = bfs();
     cout << answer;
 
