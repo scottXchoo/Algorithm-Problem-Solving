@@ -99,7 +99,7 @@ int main() {
                     is_moved = 1;
                     break;
                 }
-                else if (s_map[n_r][n_c].first == idx && first_matched_dir == -1) { // 다음 위치가 자신인데, 아직 방향이 정해지지 X
+                if (s_map[n_r][n_c].first == idx && first_matched_dir == -1) { // 다음 위치가 자신인데, 아직 방향이 정해지지 X
                     first_matched_dir = next_dir;
                 }
             }
@@ -133,7 +133,6 @@ int main() {
             } else if (c_shark > idx) { // 잡아먹을 수 있음
                 s_map[c_r][c_c] = {idx, K}; // map 업데이트
                 sharks[idx].first = out_pos;
-                sharks[idx].second = c_dir; // c_shark를 쫓아내니까 필요 없는 듯?
             } else { // 잡아먹힘
                 sharks[idx].first = out_pos; // map 업데이트 X
             }
