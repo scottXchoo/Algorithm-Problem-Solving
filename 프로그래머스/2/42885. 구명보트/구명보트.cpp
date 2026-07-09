@@ -1,24 +1,29 @@
-#include<iostream>
-#include<string>
-#include<vector>
-#include<algorithm>
+#include <string>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int solution(vector<int> people, int limit) {
-    int answer = 0, cnt = 0, size = people.size();
-    int st = 0, end = size - 1;
+    int answer = 0;
     
-    sort(people.begin(), people.end());
-    
-    while(st <= end){
-        if(people[st] + people[end] <= limit){  // 둘이 탈 수 있을 때
-            st++;
-            end--;
+    // people 내림차순
+    int people_len = people.size();
+    sort(people.begin(), people.end(), greater<>());
+    for (int i = 0; i < people_len - 1; i++) {
+        int cur_num = people[i];
+        for (int j = i + 1; j < people_len; j++) {
+            int next_num = people[j];
+            if (next_num == 0) continue;
+            if (cur_num + next_num <= limit) {
+                people[i] = cur_num + next_num;
+                people[j] = 0;
+            }
         }
-        else  // 최댓값 혼자 탈 때
-            end--;
-        answer++;  // 보트 하나 탑승
+    }
+    
+    for (int i = 0; i < people_len; i++) {
+        if (people[i] != 0) answer++;
     }
     
     return answer;
